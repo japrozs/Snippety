@@ -187,3 +187,74 @@ droid1.die()
 droid2.die()
 Robot.how_many()
 ```
+
+## Extension Details
+
+```json
+{
+  "name": "snippety",
+  "displayName": "Snippety",
+  "description": "Snippets for all your web programming needs (HTML, CSS, React, Redux,Vue, VueX, lodash, Next, classnames ES6, ES7, GraphQL, NodeJS)!!",
+  "version": "1.2.1",
+  "publisher": "JaprozSinghSaini",
+  "author": {
+    "name": "Japroz Singh Saini",
+    "email": "sainijaproz@gmail.com",
+    "url": "https://japrozsaini.me"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Japroz-Saini/Snippety"
+  },
+  "bugs": {
+    "url": "https://github.com/Japroz-Saini/Snippety/issues"
+  },
+  "icon": "icon.png",
+  "keywords": [
+    "Snippets",
+    "React Snippets",
+    "Python Snippets",
+    "Redux Snippets",
+    "Angular Snippets",
+    "Snippety",
+    "Angular",
+    "All in One",
+    "Flask",
+    "Django",
+    "Web Snippets",
+    "Next",
+    "Lodash",
+    "Python2",
+    "Python3"
+  ],
+  "engines": {
+    "vscode": "^1.1.0"
+  },
+  "categories": ["Snippets"],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/snippets.code-snippets"
+      },
+      {
+        "language": "html",
+        "path": "./snippets/snippets.code-snippets"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/snippets.code-snippets"
+      },
+      {
+        "language": "python",
+        "path": "./snippets/snippets.code-snippets"
+      },
+      {
+        "language": "markdown",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}
+```
