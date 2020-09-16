@@ -9915,5 +9915,1722 @@
       "flying_test(peggy)"
     ],
     "description": "class polymorphism example"
+  },
+  "Flask hello world": {
+    "prefix": "hw",
+    "body": [
+      "from flask import Flask",
+      "app = Flask(__name__)",
+      "",
+      "@app.route('/')",
+      "def hello():",
+      "    return 'Hello World!'",
+      "",
+      "if __name__ == '__main__':",
+      "    app.run()"
+    ]
+  },
+  "Flask route": {
+    "prefix": "route",
+    "body": [
+      "@app.route('/${1:route_name}')",
+      "def ${2:method_name}():",
+      "   pass$0"
+    ]
+  },
+  "Flask route with GET, POST": {
+    "prefix": "routegp",
+    "body": [
+      "@app.route('/${1:route_name}', methods=['GET', 'POST'])",
+      "def ${2:method_name}():",
+      "   pass$0"
+    ]
+  },
+  "Flask route POST only": {
+    "prefix": "routep",
+    "body": [
+      "@app.route('/${1:route_name}', methods=['POST'])",
+      "def ${2:method_name}():",
+      "   pass$0"
+    ]
+  },
+  "ML docstring": {
+    "prefix": "\"\"\"",
+    "body": "\\\"\\\"\\\"${1:sumary_line}\n\nKeyword arguments:\n${2:argument} -- ${3:description}\nReturn: ${4:return_description}\n\\\"\\\"\\\"\n$0"
+  },
+  "SL docstring": {
+    "prefix": "\"\"",
+    "body": "\"\"\"${1:sumary_line}\"\"\"\n$0"
+  },
+  "Flask App": {
+    "prefix": "fapp",
+    "body": "from flask import Flask, render_template\napp = Flask(__name__)\n\n\n@app.route('${1:/}')\ndef ${2:index}():\n    return render_template('${3:index}.html')\n\nif __name__ == '__main__':\n  app.run(host='${4:127.0.0.1}', port=${5:8000}, debug=${6:True})\n$0 $0"
+  },
+  "Flask route": {
+    "prefix": "froute",
+    "body": "@app.route('${1:path}')\ndef ${2:func_name}(${3:foo}):\n    return render_template('${4:expression}')$0"
+  },
+  "URL generator": {
+    "prefix": "furl",
+    "body": "url_for('${1:foo}'$2)$0"
+  },
+  "URL methods": {
+    "prefix": "fmeth",
+    "body": "methods=['GET', 'POST']$0"
+  },
+  "Render template": {
+    "prefix": "frt",
+    "body": "render_template('${1:page}.html', ${2:foo}=${3:bar})$0"
+  },
+  "Test request": {
+    "prefix": "ftreq",
+    "body": "with app.test_request_context('${1:path}', method='${2:POST}'):\n\t\tassert request.path == '${1:path}'\n\t\tassert.method == '${2:POST}'\n$0"
+  },
+  "Flask upload": {
+    "prefix": "fup",
+    "body": "@app.route('${1:/upload}', methods=['GET', 'POST'])\ndef ${2:upload_file}():\n    if request.method == 'POST':\n        ${3:f} = request.files['${4:the_file}']\n        ${3:f}.save('${6:/path/to/save/}${4:the_file}.${5:txt}')\n$0"
+  },
+  "Secure upload": {
+    "prefix": "fsup",
+    "body": "from werkzeug.utils import secure_filename\n\n@app.route('${1:/upload}', methods=['GET', 'POST'])\ndef ${2:upload_file}():\n    if request.method == 'POST':\n        ${3:f} = request.files['${4:the_file}']\n        ${3:f}.save('${5:/path/to/save/}' + secure_filename(${3:f}.filename))$0"
+  },
+  "Read cookie": {
+    "prefix": "frc",
+    "body": "${1:foo} = request.cookies.get$('${2:key}')\n$0"
+  },
+  "Set cookie": {
+    "prefix": "fsc",
+    "body": "${1:foo} = make_response(${2:expression})\n${1:foo}.set_cookie('${3:key}', '${4:value}')\nreturn ${1:foo}\n$0"
+  },
+  "Error handler": {
+    "prefix": "feh",
+    "body": "@app.errorhandler(${1:404})\ndef ${2:bar}(error):\n\t\treturn render_template('${3:error.html}'), ${1:404}\n$0"
+  },
+  "Flask logging": {
+    "prefix": "flog",
+    "body": "app.logger.${1:debug}(\"${2:A message}\")\n$0"
+  },
+  "Flask expresion": {
+    "prefix": "fexp",
+    "body": "{{ ${1:foo.bar} }}$0"
+  },
+  "Flask filter": {
+    "prefix": "ffilter",
+    "body": "{{ ${1:foo.bar}|${2:filter} }}$0"
+  },
+  "Flask comment": {
+    "prefix": "fcomment",
+    "body": "{# \n\t${1:comment} \n#}$0"
+  },
+  "Flask block": {
+    "prefix": "fblock",
+    "body": "{% ${1:block} ${2:foo} %}$3{% end${1:block} %}\n$0"
+  },
+  "Flask extends": {
+    "prefix": "fextends",
+    "body": "{% extends ${1:layout_template} %}\n\n$0"
+  },
+  "Flask self": {
+    "prefix": "fself",
+    "body": "{{ self.${1:block_name}() }}$0"
+  },
+  "Flask super": {
+    "prefix": "fsuper",
+    "body": "{{ self.supper() }}$0"
+  },
+  "Flask for": {
+    "prefix": "ffor",
+    "body": "{% for ${1:element} in ${2:collection} %}\n\t\t$3{{ ${1:element}|e }}$4\n{% endfor %}\n$0"
+  },
+  "Flask if": {
+    "prefix": "fif",
+    "body": "{% if ${1:expression} %}\n\t\t${2:blockofcode}\n{% endif %}\n$0"
+  },
+  "Flask ife": {
+    "prefix": "fife",
+    "body": "{% if ${1:expression} %}\n\t\t${2:blockofcode}\n{% else %}\n\t\t${3:blockofcode}\n{% endif %}\n$0"
+  },
+  "Flask elif": {
+    "prefix": "felif",
+    "body": "{% if ${1:expression} %}\n\t\t${2:blockofcode}\n{% elif ${3:expression2} %}\n\t\t${4:blockofcode}\n{% else %}\n\t\t${5:blockofcode}\n{% endif %}\n$0"
+  },
+  "Flask macro": {
+    "prefix": "fmacro",
+    "body": "{% macro ${1:expression} -%}\n\t\t${2:blockofcode}\n{%- endmacro %}$0"
+  },
+  "Flask filter block": {
+    "prefix": "ffb",
+    "body": "{% filter ${1:foo} %}\n\t\t${2:blockofcode}\n{% endfilter %}$0"
+  },
+  "Flask set": {
+    "prefix": "fset",
+    "body": "{% set ${1:expression} %}$0"
+  },
+  "Flask include": {
+    "prefix": "finclude",
+    "body": "{% include \"${1:template}\" %}$0"
+  },
+  "Flask import": {
+    "prefix": "fimport",
+    "body": "{% import \"${1:template}\" as ${2:alias} %}\n$0"
+  },
+  "Flask from import": {
+    "prefix": "ffrom",
+    "body": "{% from '${1:template}.html' import ${2:object} %}\n$3",
+    "description": "flask from import"
+  },
+  "Flask autoescape": {
+    "prefix": "fautoescape",
+    "body": "{% autoescape ${1:true} %}\n\t\t${2:blockofcode}\n{% endautoescape %}\n$0"
+  },
+  "Flask url": {
+    "prefix": "furl",
+    "body": "{{ url_for(\"${1:template}\") }}$0"
+  },
+  "__str__": {
+    "prefix": "str",
+    "body": [
+      "def __str__(self):",
+      "\treturn self${1: # TODO}"
+    ],
+    "description": "",
+    "scope": "source.python"
+  },
+  "get_absolute_url": {
+    "prefix": "get_absolute_url",
+    "body": [
+      "def get_absolute_url(self):",
+      "\tfrom django.core.urlresolvers import reverse",
+      "\treturn reverse('$1', kwargs={'pk': self.pk})"
+    ],
+    "description": "",
+    "scope": "source.python"
+  },
+  "receiver": {
+    "prefix": "receiver",
+    "body": [
+      "def ${1:FUNCTIONNAME}_${2|pre_init,post_init,pre_save,post_save,pre_delete,post_delete,m2m_changed,class_prepared,Management signals,pre_migrate,post_migrate|}_receiver(sender, instance, *args, **kwargs):",
+      "\tpass",
+      "\n\n${2|pre_init,post_init,pre_save,post_save,pre_delete,post_delete,m2m_changed,class_prepared,Management signals,pre_migrate,post_migrate|}.connect(${1:name}_${2|pre_init,post_init,pre_save,post_save,pre_delete,post_delete,m2m_changed,class_prepared,Management signals,pre_migrate,post_migrate|}_receiver, sender=${3:MODELNAME})"
+    ],
+    "description": "",
+    "scope": "source.python"
+  },
+  "mauto": {
+    "prefix": "mauto",
+    "body": "${1:FIELDNAME} = models.AutoField($2)",
+    "description": "AutoField (mauto).\n\nAn IntegerField that automatically increments according to available IDs.\n\n",
+    "scope": "source.python"
+  },
+  "mbigauto": {
+    "prefix": "mbigauto",
+    "body": "${1:FIELDNAME} = models.BigAutoField($2)",
+    "description": "BigAutoField (mbigauto).\n\n[New in Django 1.10.]\n\nA 64-bit integer, much like an AutoField.\n\n",
+    "scope": "source.python"
+  },
+  "mbigint": {
+    "prefix": "mbigint",
+    "body": "${1:FIELDNAME} = models.BigIntegerField($2)",
+    "description": "BigIntegerField (mbigint).\n\nA 64-bit integer, much like an IntegerField.\n\n",
+    "scope": "source.python"
+  },
+  "mbinary": {
+    "prefix": "mbinary",
+    "body": "${1:FIELDNAME} = models.BinaryField($2)",
+    "description": "BinaryField (mbinary).\n\nA field to store raw binary data.\n\n",
+    "scope": "source.python"
+  },
+  "mbool": {
+    "prefix": "mbool",
+    "body": "${1:FIELDNAME} = models.BooleanField($2)",
+    "description": "BooleanField (mbool).\n\nA true/false field.\n\n",
+    "scope": "source.python"
+  },
+  "mchar": {
+    "prefix": "mchar",
+    "body": "${1:FIELDNAME} = models.CharField($2, max_length=${3:50})",
+    "description": "CharField (mchar)",
+    "scope": "source.python"
+  },
+  "mcoseint": {
+    "prefix": "mcoseint",
+    "body": "${1:FIELDNAME} = models.CommaSeparatedIntegerField($2)",
+    "description": "CommaSeparatedIntegerField (mcoseint).\n\nThis field is deprecated since 1.9 in favor of CharField with validators.\n\n",
+    "scope": "source.python"
+  },
+  "mdate": {
+    "prefix": "mdate",
+    "body": "${1:FIELDNAME} = models.DateField($2, auto_now=${3:False}, auto_now_add=${4:False})",
+    "description": "DateField (mdate).\n\nA date, represented in Python by a datetime.date instance.\n\n",
+    "scope": "source.python"
+  },
+  "mdatetime": {
+    "prefix": "mdatetime",
+    "body": "${1:FIELDNAME} = models.DateTimeField($2, auto_now=${3:False}, auto_now_add=${4:False})",
+    "description": "DateTimeField (mdatetime).\n\nA date, represented in Python by a datetime.datetime instance.\n\n",
+    "scope": "source.python"
+  },
+  "mdecimal": {
+    "prefix": "mdecimal",
+    "body": "${1:FIELDNAME} = models.DecimalField($2, max_digits=${3:5}, decimal_places=${4:2})",
+    "description": "DecimalField (mdecimal).\n\nA fixed-precision decimal number, represented in Python by a Decimal instance.\n\n",
+    "scope": "source.python"
+  },
+  "mduration": {
+    "prefix": "mduration",
+    "body": "${1:FIELDNAME} = models.DurationField($2)",
+    "description": "DurationField (mduration).\n\nA field for storing periods of time - modeled in Python by timedelta.\n\n",
+    "scope": "source.python"
+  },
+  "memail": {
+    "prefix": "memail",
+    "body": "${1:FIELDNAME} = models.EmailField($2, max_length=${3:254})",
+    "description": "EmailField (memail).\n\nA CharField that checks that the value is a valid email address.\n\n",
+    "scope": "source.python"
+  },
+  "mfile": {
+    "prefix": "mfile",
+    "body": "${1:FIELDNAME} = models.FileField($2, upload_to=${3:None}, max_length=${4:100})",
+    "description": "FileField (mfile).\n\nA file-upload field.\n\n",
+    "scope": "source.python"
+  },
+  "mfilepath": {
+    "prefix": "mfilepath",
+    "body": "${1:FIELDNAME} = models.FilePathField($2, path=${3:None}, match=${4:None}, recursive=${5:recursive}, max_length=${6:100})",
+    "description": "FilePathField (mfilepath).\n\nA CharField whose choices are limited to the filenames in a certain directory on the filesystem.\n\n",
+    "scope": "source.python"
+  },
+  "mfloat": {
+    "prefix": "mfloat",
+    "body": "${1:FIELDNAME} = models.FloatField($2)",
+    "description": "FloatField (mfloat).\n\nA floating-point number represented in Python by a float instance.\n\n",
+    "scope": "source.python"
+  },
+  "fk": {
+    "prefix": "fk",
+    "body": "${1:FIELDNAME} = models.ForeignKey(${2:OTHERMODEL}, on_delete=models.${3|CASCADE,PROTECT,SET_NULL,SET_DEFAULT,SET(),DO_NOTHING|})",
+    "description": "ForeignKey (fk).\n\nA many-to-one relationship.\n\non_delete will become a required argument in Django 2.0. In older versions it defaults to CASCADE.\n\n",
+    "scope": "source.python"
+  },
+  "mip": {
+    "prefix": "mip",
+    "body": "${1:FIELDNAME} = models.IPAddressField($2)",
+    "description": "IPAddressField (mip).\n\nThis field has been deprecated since version 1.7 in favor of GenericIPAddressField.\n\n",
+    "scope": "source.python"
+  },
+  "mimg": {
+    "prefix": "mimg",
+    "body": "${1:FIELDNAME} = models.ImageField($2, upload_to=${3:None}, height_field=${4:None}, width_field=${5:None}, max_length=${5:100})",
+    "description": "ImageField (mimg).\n\nInherits all attributes and methods from FileField, but also validates that the uploaded object is a valid image.\n\n",
+    "scope": "source.python"
+  },
+  "mint": {
+    "prefix": "mint",
+    "body": "${1:FIELDNAME} = models.IntegerField($2)",
+    "description": "IntegerField (mint).\n\nAn integer. Values from -2147483648 to 2147483647 are safe in all databases supported by Django.\n\n",
+    "scope": "source.python"
+  },
+  "mgenericip": {
+    "prefix": "mgenericip",
+    "body": "${1:FIELDNAME} = models.GenericIPAddressField($2, protocol=${3:'both'}, unpack_ipv4=${4:False})",
+    "description": "GenericIPAddressField (mimg).\n\nAn IPv4 or IPv6 address, in string format.\n\n",
+    "scope": "source.python"
+  },
+  "m2m": {
+    "prefix": "m2m",
+    "body": "${1:FIELDNAME} = models.ManyToManyField(${2:OTHERMODEL})",
+    "description": "ManyToManyField (m2m).\n\nA many-to-many relationship.\n\n",
+    "scope": "source.python"
+  },
+  "mnullbool": {
+    "prefix": "mnullbool",
+    "body": "${1:FIELDNAME} = models.NullBooleanField($2)",
+    "description": "NullBooleanField (mnullbool).\n\nLike a BooleanField, but allows NULL as one of the options.\n\n",
+    "scope": "source.python"
+  },
+  "o2o": {
+    "prefix": "o2o",
+    "body": "${1:FIELDNAME} = models.OneToOneField(${2:OTHERMODEL}, on_delete=models.${3|CASCADE,PROTECT,SET_NULL,SET_DEFAULT,SET(),DO_NOTHING|})",
+    "description": "OneToOneField (o2o).\n\nA one-to-one relationship.\n\non_delete will become a required argument in Django 2.0. In older versions it defaults to CASCADE.\n\n",
+    "scope": "source.python"
+  },
+  "mphone": {
+    "prefix": "mphone",
+    "body": "${1:FIELDNAME} = models.PhoneNumberField($2)",
+    "description": "PhoneNumberField (mphone).\n\n*external package: django-phonenumber-field*\n\n",
+    "scope": "source.python"
+  },
+  "mposint": {
+    "prefix": "mposint",
+    "body": "${1:FIELDNAME} = models.PositiveIntegerField($2)",
+    "description": "PositiveIntegerField (mposint).\n\nLike an IntegerField, but must be either positive or zero (0).\n\n",
+    "scope": "source.python"
+  },
+  "mpossmallint": {
+    "prefix": "mpossmallint",
+    "body": "${1:FIELDNAME} = models.PositiveSmallIntegerField($2)",
+    "description": "PositiveSmallIntegerField (mpossmallint).\n\nLike a PositiveIntegerField, but only allows values under a certain (database-dependent) point.\n\n",
+    "scope": "source.python"
+  },
+  "mslug": {
+    "prefix": "mslug",
+    "body": "${1:FIELDNAME} = models.SlugField($2)",
+    "description": "SlugField (mslug).\n\nA slug is a short label for something, containing only letters, numbers, underscores or hyphens. They’re generally used in URLs.\n\n",
+    "scope": "source.python"
+  },
+  "msmallint": {
+    "prefix": "msmallint",
+    "body": "${1:FIELDNAME} = models.SmallIntegerField($2)",
+    "description": "SmallIntegerField (msmallint).\n\nLike an IntegerField, but only allows values under a certain (database-dependent) point.\n\n",
+    "scope": "source.python"
+  },
+  "mtext": {
+    "prefix": "mtext",
+    "body": "${1:FIELDNAME} = models.TextField($2)",
+    "description": "TextField (mtext).\n\nA large text field.\n\n",
+    "scope": "source.python"
+  },
+  "mtime": {
+    "prefix": "mtime",
+    "body": "${1:FIELDNAME} = models.TimeField($2, auto_now=${4:False}, auto_now_add=${5:False})",
+    "description": "TimeField (mtime).\n\nA time, represented in Python by a datetime.time instance.\n\n",
+    "scope": "source.python"
+  },
+  "murl": {
+    "prefix": "murl",
+    "body": "${1:FIELDNAME} = models.URLField($2, max_length=${3:200})",
+    "description": "URLField (murl).\n\nA CharField for a URL.\n\n",
+    "scope": "source.python"
+  },
+  "musstate": {
+    "prefix": "musstate",
+    "body": "${1:FIELDNAME} = models.USStateField($2)",
+    "description": "USStateField (musstate).\n\n*external package: django-localflavor*\n\n",
+    "scope": "source.python"
+  },
+  "muuid": {
+    "prefix": "muuid",
+    "body": "${1:FIELDNAME} = models.UUIDField($2)",
+    "description": "UUIDField (muuid).\n\nA field for storing universally unique identifiers. Uses Python’s UUID class.\n\n",
+    "scope": "source.python"
+  },
+  "mxml": {
+    "prefix": "mxml",
+    "body": "${1:FIELDNAME} = models.XMLField($2)",
+    "description": "XMLField (mxml).\n\n*All uses of XMLField can be replaced with TextField. This field has been deprecated since version 1.3*\n\n",
+    "scope": "source.python"
+  },
+  "mstore": {
+    "prefix": "mstore",
+    "body": "${1:FIELDNAME} = HStoreField()",
+    "description": "HStoreField (mstore).\n\n*PostgreSQL specific model fields*.\n\nA field for storing key-value pairs. The Python data type used is a dict.\n\n",
+    "scope": "source.python"
+  },
+  "mjson": {
+    "prefix": "mjson",
+    "body": "${1:FIELDNAME} = JSONField()",
+    "description": "JSONField (mjson).\n\n*PostgreSQL specific model fields*.\n\n[New in Django 1.11.]\n\nA field for storing JSON encoded data.\n\n",
+    "scope": "source.python"
+  },
+  "marray": {
+    "prefix": "marray",
+    "body": "${1:FIELDNAME} = ArrayField()",
+    "description": "ArrayField (marray).\n\n*PostgreSQL specific model fields*.\n\nA field for storing lists of data\n\n",
+    "scope": "source.python"
+  },
+  "fmai": {
+    "prefix": "fmai",
+    "body": "from .managers import $1QuerySet",
+    "description": "",
+    "scope": "source.python"
+  },
+  "fmi": {
+    "prefix": "fmi",
+    "body": "from .models import $1",
+    "description": "",
+    "scope": "source.python"
+  },
+  "imodels": {
+    "prefix": "imodels",
+    "body": "from django.db import models",
+    "description": "from ... import models",
+    "scope": "source.python"
+  },
+  "ipy2_unicode_compatible": {
+    "prefix": "iuc",
+    "body": "from django.utils.encoding import python_2_unicode_compatible",
+    "description": "For forwards compatibility, this decorator is available as of Django 1.4.2.",
+    "scope": "source.python"
+  },
+  "ipostgresmf": {
+    "prefix": "ipostgresmf",
+    "body": "from django.contrib.postgres.fields import ${1|ArrayField,JSONField,HStoreField|}",
+    "description": "PostgreSQL specific model fields",
+    "scope": "source.python"
+  },
+  "isignals": {
+    "prefix": "isignals",
+    "body": "from django.db.models.signals import ${1|pre_init,post_init,pre_save,post_save,pre_delete,post_delete,m2m_changed,class_prepared,Management signals,pre_migrate,post_migrate|}",
+    "description": "Signals for Django Model",
+    "scope": "source.python"
+  },
+  "Model_full": {
+    "prefix": "Model_full",
+    "body": [
+      "class ${1:MODELNAME}(models.Model):",
+      "\t\"\"\"${2:Model definition for $1}.\"\"\"",
+      "",
+      "\t${3:# TODO: Define fields here}",
+      "",
+      "\tclass Meta:",
+      "\t\t\"\"\"Meta definition for $1.\"\"\"",
+      "",
+      "\t\tverbose_name = '$1'",
+      "\t\tverbose_name_plural = '$1s'",
+      "",
+      "\tdef ${4|__str__,__unicode__|}(self):",
+      "\t\t\"\"\"Unicode representation of $1.\"\"\"",
+      "\t\t${7|pass,return '{}'.format(self. ) # TODO,return f'{self. }' # TODO|}",
+      "",
+      "\tdef save(self):",
+      "\t\t\"\"\"Save method for $1.\"\"\"",
+      "\t\tpass",
+      "",
+      "\tdef get_absolute_url(self):",
+      "\t\t\"\"\"Return absolute url for $1.\"\"\"",
+      "\t\treturn ('')",
+      "",
+      "\t${6:# TODO: Define custom methods here}",
+      ""
+    ],
+    "description": "Model (full)",
+    "scope": "source.python"
+  },
+  "Model": {
+    "prefix": "Model",
+    "body": [
+      "class ${1:MODELNAME}(models.Model):",
+      "\t\"\"\"${2:Model definition for $1}.\"\"\"",
+      "",
+      "\t${3:# TODO: Define fields here}",
+      "",
+      "\tclass Meta:",
+      "\t\t\"\"\"Meta definition for $1.\"\"\"",
+      "",
+      "\t\tverbose_name = '$1'",
+      "\t\tverbose_name_plural = '$1s'",
+      "",
+      "\tdef ${4|__str__,__unicode__|}(self):",
+      "\t\t\"\"\"Unicode representation of $1.\"\"\"",
+      "\t\t${5|pass,return '{}'.format(self. ) # TODO,return f'{self. }' # TODO|}",
+      ""
+    ],
+    "description": "Model",
+    "scope": "source.python"
+  },
+  "modelmixin": {
+    "prefix": "modelmixin",
+    "body": [
+      "class $1Mixin(models.Model):",
+      "\t${2:# TODO}\r\n",
+      "\tclass Meta:",
+      "\t\tabstract = True"
+    ],
+    "description": "",
+    "scope": "source.python"
+  },
+  "queryset": {
+    "prefix": "qs",
+    "body": [
+      "class $1QuerySet(models.QuerySet):",
+      "\tpass"
+    ],
+    "description": "",
+    "scope": "source.python"
+  },
+  "manager": {
+    "prefix": "mngr",
+    "body": [
+      "class $1Manager(models.Manager):",
+      "\tdef get_queryset(self):",
+      "\t\treturn super ($1Manager, self).get_queryset().${2|filter,exclude,order_by,distinct,reverse|}($3)"
+    ],
+    "description": "Add extra Manager methods",
+    "scope": "source.python"
+  },
+  "queryset_from_manager": {
+    "prefix": "qs_mngr",
+    "body": [
+      "class $1Manager(models.Manager):",
+      "\tdef get_queryset(self):",
+      "\t\treturn $1QuerySet(self.model, using=self._db)"
+    ],
+    "description": "Modify the initial QuerySet the Manager returns.",
+    "scope": "source.python"
+  },
+  "__init__": {
+    "prefix": "__init__",
+    "body": "\r\ndef __init__(self, *args, **kwargs):\r\n    super(${1:CLASS_NAME}, self).__init__(*args, **kwargs)\r\n",
+    "description": "",
+    "scope": "source.python"
+  },
+  "ipdb": {
+    "prefix": "ipdb",
+    "body": "import ipdb; ipdb.set_trace()",
+    "description": "ipdb debug tool",
+    "scope": "source.python"
+  },
+  "npdb": {
+    "prefix": "npdb",
+    "body": "from nose.tools import set_trace; set_trace()",
+    "description": "nose pdb debug tool",
+    "scope": "source.python"
+  },
+  "pdb": {
+    "prefix": "pdb",
+    "body": "import pdb; pdb.set_trace()",
+    "description": "pdb debug tool",
+    "scope": "source.python"
+  },
+  "traceback": {
+    "prefix": "traceback",
+    "body": "import traceback; traceback.print_exc();",
+    "description": "traceback print exception",
+    "scope": "source.python"
+  },
+  "utfc": {
+    "prefix": "utfc",
+    "body": "# -*- coding: utf-8 -*-",
+    "description": "coding: utf-8",
+    "scope": "source.python"
+  },
+  "iunicode_literals": {
+    "prefix": "iul",
+    "body": "from __future__ import unicode_literals",
+    "description": "In order to enable the same behavior in Python 2, every module must import: \n",
+    "scope": "source.python"
+  },
+  "autoescape": {
+    "prefix": "autoescape",
+    "body": "\r\n{% autoescape ${1:off} %}\r\n\t${2:$SELECTION}\r\n{% endautoescape %}\r\n",
+    "description": "autoescape",
+    "scope": "text.html.django"
+  },
+  "block": {
+    "prefix": "block",
+    "body": "\r\n{% block ${1:blockname} %}\r\n\t${2:$SELECTION}\r\n{% endblock ${1:blockname} %}\r\n\t",
+    "description": "block",
+    "scope": "text.html.django"
+  },
+  "blocktrans": {
+    "prefix": "blocktrans",
+    "body": "\r\n{% blocktrans %}\r\n\t${1:$SELECTION}\r\n{% endblocktrans %}\r\n",
+    "description": "blocktrans",
+    "scope": "text.html.django"
+  },
+  "comment": {
+    "prefix": "comment",
+    "body": "\r\n{% comment %}\r\n\t${1:$SELECTION}\r\n{% endcomment %}\r\n\t",
+    "description": "comment",
+    "scope": "text.html.django"
+  },
+  "var": {
+    "prefix": "var",
+    "body": "{{ ${1:$SELECTION} }}",
+    "description": "context variable (var)",
+    "scope": "text.html.django"
+  },
+  "csrf": {
+    "prefix": "csrf",
+    "body": "{% csrf_token %}",
+    "description": "csrf_token",
+    "scope": "text.html.django"
+  },
+  "cycle": {
+    "prefix": "cycle",
+    "body": "{% cycle $1 %}",
+    "description": "cycle",
+    "scope": "text.html.django"
+  },
+  "debug": {
+    "prefix": "debug",
+    "body": "{% debug %}",
+    "description": "debug",
+    "scope": "text.html.django"
+  },
+  "elif": {
+    "prefix": "elif",
+    "body": "{% elif %}",
+    "description": "elif",
+    "scope": "text.html.django"
+  },
+  "else": {
+    "prefix": "else",
+    "body": "{% else %}",
+    "description": "else",
+    "scope": "text.html.django"
+  },
+  "ext": {
+    "prefix": "ext",
+    "body": "{% extends '${1:$SELECTION}' %}",
+    "description": "extends (ext)",
+    "scope": "text.html.django"
+  },
+  "extends": {
+    "prefix": "extends",
+    "body": "{% extends '${1:$SELECTION}' %}",
+    "description": "extends",
+    "scope": "text.html.django"
+  },
+  "extrahead": {
+    "prefix": "extrahead",
+    "body": "\r\n{% block extrahead %}\r\n\t${1:$SELECTION}\r\n{% endblock extrahead %}\r\n\t",
+    "description": "block extrahead",
+    "scope": "text.html.django"
+  },
+  "extrastyle": {
+    "prefix": "extrastyle",
+    "body": "\r\n{% block extrastyle %}\r\n\t${1:$SELECTION}\r\n{% endblock extrastyle %}\r\n\t",
+    "description": "block extrastyle",
+    "scope": "text.html.django"
+  },
+  "filter": {
+    "prefix": "filter",
+    "body": "\r\n{% filter $1 %}\r\n\t${2:$SELECTION}\r\n{% endfilter %}\r\n",
+    "description": "filter",
+    "scope": "text.html.django"
+  },
+  "firstof": {
+    "prefix": "firstof",
+    "body": "{% firstof $1 %}",
+    "description": "firstof",
+    "scope": "text.html.django"
+  },
+  "for": {
+    "prefix": "for",
+    "body": "\r\n{% for $1 in $2 %}\r\n\t${3:$SELECTION}\r\n{% endfor %}\r\n\t",
+    "description": "for",
+    "scope": "text.html.django"
+  },
+  "fore": {
+    "prefix": "fore",
+    "body": "\r\n{% for $1 in $2 %}\r\n\t$3\r\n{% empty %}\r\n\t$4\r\n{% endfor %}\r\n\t",
+    "description": "for... empty...",
+    "scope": "text.html.django"
+  },
+  "iblock": {
+    "prefix": "iblock",
+    "body": "{% block ${1:blockname} %}${2:$SELECTION}{% endblock ${1:blockname} %}",
+    "description": "inline block",
+    "scope": "text.html.django"
+  },
+  "if": {
+    "prefix": "if",
+    "body": "\r\n{% if $1 %}\r\n\t${2:$SELECTION}\r\n{% endif %}\r\n\t",
+    "description": "if",
+    "scope": "text.html.django"
+  },
+  "ifchanged": {
+    "prefix": "ifchanged",
+    "body": "\r\n{% ifchanged $1 %}\r\n\t${2:$SELECTION}\r\n{% endifchanged %}\r\n\t",
+    "description": "ifchanged",
+    "scope": "text.html.django"
+  },
+  "ife": {
+    "prefix": "ife",
+    "body": "\r\n{% if $1 %}\r\n\t$2\r\n{% else %}\r\n\t$3\r\n{% endif %}\r\n\t",
+    "description": "if... else...",
+    "scope": "text.html.django"
+  },
+  "ifelse": {
+    "prefix": "ifelse",
+    "body": "\r\n{% if $1 %}\r\n\t$2\r\n{% else %}\r\n\t$3\r\n{% endif %}\r\n\t",
+    "description": "if... else...",
+    "scope": "text.html.django"
+  },
+  "ifeq": {
+    "prefix": "ifeq",
+    "body": "\r\n{% ifequal $1 $2 %}\r\n\t${3:$SELECTION}\r\n{% endifequal %}\r\n\t",
+    "description": "ifequal (ifeq)",
+    "scope": "text.html.django"
+  },
+  "ifequal": {
+    "prefix": "ifequal",
+    "body": "\r\n{% ifequal $1 $2 %} \r\n\t${3:$SELECTION}\r\n{% endifequal %}\r\n\t",
+    "description": "ifequal",
+    "scope": "text.html.django"
+  },
+  "ifnotequal": {
+    "prefix": "ifnotequal",
+    "body": "\r\n{% ifnotequal $1 $2 %}\r\n\t${3:$SELECTION}\r\n{% endifnotequal %}\r\n\t",
+    "description": "ifnotequal",
+    "scope": "text.html.django"
+  },
+  "inc": {
+    "prefix": "inc",
+    "body": "{% include ${1:'$2'} %}",
+    "description": "include (inc)",
+    "scope": "text.html.django"
+  },
+  "include": {
+    "prefix": "include",
+    "body": "{% include ${1:'$2'} %}",
+    "description": "include",
+    "scope": "text.html.django"
+  },
+  "load": {
+    "prefix": "load",
+    "body": "{% load $1 %}",
+    "description": "load",
+    "scope": "text.html.django"
+  },
+  "media": {
+    "prefix": "media",
+    "body": "{{ MEDIA_URL }} ",
+    "description": "media",
+    "scope": "text.html.django"
+  },
+  "now": {
+    "prefix": "now",
+    "body": "{% now '$1' %}",
+    "description": "now",
+    "scope": "text.html.django"
+  },
+  "regroup": {
+    "prefix": "regroup",
+    "body": "{% regroup $1 by $2 as $3 %}",
+    "description": "regroup",
+    "scope": "text.html.django"
+  },
+  "spaceless": {
+    "prefix": "spaceless",
+    "body": "\r\n{% spaceless %}\r\n\t${1:$SELECTION}\r\n{% endspaceless %}\r\n\t",
+    "description": "spaceless",
+    "scope": "text.html.django"
+  },
+  "ssi": {
+    "prefix": "ssi",
+    "body": "{% ssi $1 ${2:parsed} %}",
+    "description": "ssi",
+    "scope": "text.html.django"
+  },
+  "static": {
+    "prefix": "static",
+    "body": "{% static '${1:$SELECTION}' %}",
+    "description": "static",
+    "scope": "text.html.django"
+  },
+  "staticu": {
+    "prefix": "staticu",
+    "body": "{{ STATIC_URL }} ",
+    "description": "static URL",
+    "scope": "text.html.django"
+  },
+  "super": {
+    "prefix": "super",
+    "body": "{{ block.super }}",
+    "description": "block.super",
+    "scope": "text.html.django"
+  },
+  "tag": {
+    "prefix": "tag",
+    "body": "{% $1 %}",
+    "description": "tag braces",
+    "scope": "text.html.django"
+  },
+  "templatetag": {
+    "prefix": "templatetag",
+    "body": "{% templatetag $1 %}",
+    "description": "templatetag",
+    "scope": "text.html.django"
+  },
+  "trans": {
+    "prefix": "trans",
+    "body": "{% trans '${1:$SELECTION}' %}",
+    "description": "trans",
+    "scope": "text.html.django"
+  },
+  "url": {
+    "prefix": "url",
+    "body": "{% url $1 %}",
+    "description": "url",
+    "scope": "text.html.django"
+  },
+  "verbatim": {
+    "prefix": "verbatim",
+    "body": "\r\n{% verbatim %}\r\n\t${1:$SELECTION}\r\n{% endverbatim %}\r\n\t",
+    "description": "verbatim",
+    "scope": "text.html.django"
+  },
+  "widthratio": {
+    "prefix": "widthratio",
+    "body": "{% widthratio ${1:this_value} ${2:max_value} ${3:100} %}",
+    "description": "widthratio",
+    "scope": "text.html.django"
+  },
+  "with": {
+    "prefix": "with",
+    "body": "\r\n{% with $1 as $2 %}\r\n\t${3:$SELECTION}\r\n{% endwith %}\r\n\t",
+    "description": "with",
+    "scope": "text.html.django"
+  },
+  "ilib": {
+    "prefix": "ilib",
+    "body": [
+      "from django import template",
+      "register = template.Library()"
+    ],
+    "description": "",
+    "scope": "source.python"
+  },
+  "li18n": {
+    "prefix": "li18n",
+    "body": "{% load i18n %}",
+    "description": "",
+    "scope": "text.html.django"
+  },
+  "lstatic": {
+    "prefix": "lstatic",
+    "body": "{% load staticfiles %}",
+    "description": "",
+    "scope": "text.html.django"
+  },
+  "ltags": {
+    "prefix": "ltags",
+    "body": "{% load $SELECTION$1_tags %}",
+    "description": "",
+    "scope": "text.html.django"
+  },
+  "register_assignment_tag": {
+    "prefix": "register_assignment_tag",
+    "body": [
+      "def get_$1(context):",
+      "\trequest = context.get('request')",
+      "\t$1 = ${2:[]}",
+      "\treturn ${3:$1}"
+    ],
+    "description": "",
+    "scope": "source.python"
+  },
+  "register_filter": {
+    "prefix": "register_filter",
+    "body": [
+      "@register.filter",
+      "def $1(value):",
+      "\treturn value$2"
+    ],
+    "description": "",
+    "scope": "source.python"
+  },
+  "register_inclusion_tag": {
+    "prefix": "register_inclusion_tag",
+    "body": [
+      "@register.inclusion_tag(${2:'$1.html'}, takes_context=True)",
+      "def $1(context):",
+      "\trequest = context.get('request')",
+      "\t$3",
+      "\treturn {",
+      "\t\t'request': request,",
+      "\t\t$4",
+      "\t}"
+    ],
+    "description": "",
+    "scope": "source.python"
+  },
+  "register_simple_tag": {
+    "prefix": "register_simple_tag",
+    "body": [
+      "@register.simple_tag(takes_context=True)",
+      "def $1(context):",
+      "\trequest = context.get('request')",
+      "\treturn ${2:'It Works!'}"
+    ],
+    "description": "",
+    "scope": "source.python"
+  },
+  "createview": {
+    "prefix": "createview",
+    "body": "\r\nclass ${1:MODEL_NAME}CreateView(CreateView):\r\n    model = ${1:MODEL_NAME}\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n",
+    "description": "",
+    "scope": "source.python"
+  },
+  "deleteview": {
+    "prefix": "deleteview",
+    "body": "\r\nclass ${1:MODEL_NAME}DeleteView(DeleteView):\r\n    model = ${1:MODEL_NAME}\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n",
+    "description": "",
+    "scope": "source.python"
+  },
+  "detailview": {
+    "prefix": "detailview",
+    "body": "\r\nclass ${1:MODEL_NAME}DetailView(DetailView):\r\n    model = ${1:MODEL_NAME}\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n",
+    "description": "",
+    "scope": "source.python"
+  },
+  "listview": {
+    "prefix": "listview",
+    "body": "\r\nclass ${1:MODEL_NAME}ListView(ListView):\r\n    model = ${1:MODEL_NAME}\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n",
+    "description": "",
+    "scope": "source.python"
+  },
+  "templateview": {
+    "prefix": "templateview",
+    "body": "\r\nclass ${1:CLASS_NAME}(TemplateView):\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n",
+    "description": "",
+    "scope": "source.python"
+  },
+  "updateview": {
+    "prefix": "updateview",
+    "body": "\r\nclass ${1:MODEL_NAME}UpdateView(UpdateView):\r\n    model = ${1:MODEL_NAME}\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n",
+    "description": "",
+    "scope": "source.python"
+  },
+  "from views import": {
+    "prefix": "fvi",
+    "body": "from .views import $1",
+    "description": "",
+    "scope": "source.python"
+  },
+  "igenericviews": {
+    "prefix": "igenericviews",
+    "body": "from django.views.generic import ${1|CreateView,DetailView,FormView,ListView,TemplateView,UpdateView|}",
+    "description": "Generic class-based views",
+    "scope": "source.python"
+  },
+  "isettings": {
+    "prefix": "isettings",
+    "body": "from django.conf import settings",
+    "description": "from django.conf import settings",
+    "scope": "source.python"
+  },
+  "view": {
+    "prefix": "view",
+    "body": "def ${1:VIEWNAME}(request):",
+    "description": "View",
+    "scope": "source.python"
+  },
+  "dispatch": {
+    "prefix": "dispatch",
+    "body": "\r\ndef dispatch(self, request, *args, **kwargs):\r\n    return super(${1:CLASS_NAME}, self).dispatch(request, *args, **kwargs)\r\n",
+    "description": "",
+    "scope": "source.python"
+  },
+  "context": {
+    "prefix": "get_context_data",
+    "body": "\r\ndef get_context_data(self, **kwargs):\r\n    context = super(${1:CLASS_NAME}, self).get_context_data(**kwargs)\r\n    return context\r\n",
+    "description": "",
+    "scope": "source.python"
+  },
+  "get_queryset": {
+    "prefix": "get_queryset",
+    "body": [
+      "def get_queryset(self):",
+      "\tqueryset = super(${1:CLASS_NAME}, self).get_queryset()",
+      "\tqueryset = queryset${3: # TODO}",
+      "\treturn queryset"
+    ],
+    "description": "",
+    "scope": "source.python"
+  },
+  "urlresolvers": {
+    "prefix": "iurlresolvers",
+    "body": "from django.core.urlresolvers import ${1|reverse,reverse_lazy,resolve,get_script_prefix|}",
+    "description": "*Deprecated since version 1.10*\n\nUtility functions.\n\n",
+    "scope": "source.python"
+  },
+  "urls (≥1.10 & ≤1.11)": {
+    "prefix": "iurls",
+    "body": "from django.urls import ${1|reverse,reverse_lazy,resolve,get_script_prefix|}",
+    "description": "Utility functions for use in URLconfs.",
+    "scope": "source.python"
+  },
+  "conf.urls (≤1.11)": {
+    "prefix": "iconf_urls",
+    "body": "from django.conf.urls import ${1|static,url,include,handler400,handler403,handler404,handler500|}",
+    "description": "Utility functions for use in URLconfs.",
+    "scope": "source.python"
+  },
+  "urls (≥2.0)": {
+    "prefix": "iurls",
+    "body": "from django.urls import ${1|path,re_path,include,reverse,reverse_lazy,register_converter|}",
+    "description": "Utility functions for use in URLconfs.",
+    "scope": "source.python"
+  },
+  "conf.urls (≥2.0)": {
+    "prefix": "iconf_urls",
+    "body": "from django.conf.urls import ${1|static,url,handler400,handler403,handler404,handler500|}",
+    "description": "Utilityfunctions for use in URLconfs.",
+    "scope": "source.python"
+  },
+  "repk": {
+    "prefix": "repk",
+    "body": "r'^(?P<${1:pk}>d+)/$'",
+    "description": "PK URL regex",
+    "scope": "source.python"
+  },
+  "reslug": {
+    "prefix": "reslug",
+    "body": "r'^(?P<${1:slug}-w]+)/$'",
+    "description": "Slug URL regex",
+    "scope": "source.python"
+  },
+  "reusername": {
+    "prefix": "reusername",
+    "body": "r'^(?P<username>w.@+-]+)/$'",
+    "description": "Username regex",
+    "scope": "source.python"
+  },
+  "Model": {
+    "prefix": "class Django Model",
+    "description": "Django Model class snippet",
+    "body": [
+      "class ${Name}(models.Model):",
+      "    $1",
+      "",
+      "    def __str__(self):",
+      "        return $2",
+      "",
+      "    def __unicode__(self):",
+      "        return $2",
+      ""
+    ]
+  },
+  "Model Admin": {
+    "prefix": "class Django ModelAdmin",
+    "desciption": "Django ModelAdmin class snippet",
+    "body": [
+      "class ${Name}Admin(admin.ModelAdmin):",
+      "    list_display = ('$1',)",
+      "",
+      "admin.site.register(${Name}, ${Name}Admin)",
+      ""
+    ]
+  },
+  "Blank and Null Field Properties": {
+    "prefix": "blank and null Djngo Field",
+    "desciption": "Django Blank and Null model field properties snippet",
+    "body": [
+      "blank=True, null=True"
+    ]
+  },
+  "CharField": {
+    "prefix": "CharField",
+    "desciption": "Django CharField snippet",
+    "body": [
+      "${name} = models.CharField(max_length=${length}, ${blank=True, null=True})"
+    ]
+  },
+  "Foreign Key": {
+    "prefix": "ForeignKeyField",
+    "description": "Django ForeignKeyField snippet",
+    "body": [
+      "${name} = models.ForeignKey('${TargetModel}', related_name='$1', on_delete=models.CASCADE)"
+    ]
+  },
+  "Override Save Method": {
+    "prefix": "save method Django Override",
+    "description": "Django override save() method of models",
+    "body": [
+      "def save(self, *args, **kwargs):",
+      "   $1",
+      "   super(${ModelName}, self).save(*args, **kwargs) # Call the real save() method"
+    ]
+  },
+  "View": {
+    "prefix": "View",
+    "description": "Django generic class based View",
+    "body": [
+      "class ${Name}View(View):",
+      "    def get(self, request, *args, **kwargs):",
+      "        return HttpResponse('GET request!')",
+      "",
+      "    def post(self, request, *args, **kwargs):",
+      "        return HttpResponse('POST request!')"
+    ]
+  },
+  "ListView": {
+    "prefix": "ListView",
+    "description": "Django generic ListView",
+    "body": [
+      "class ${ModelName}List(ListView):",
+      "    model = ${ModelName}",
+      "    context_object_name = '$1'",
+      "    template_name='$2'"
+    ]
+  },
+  "DetailView": {
+    "prefix": "DetailView",
+    "description": "Django generic DetailView",
+    "body": [
+      "class ${ModelName}Detail(DetailView):",
+      "    model = ${ModelName}",
+      "    template_name='$2'"
+    ]
+  },
+  "get_context_data": {
+    "prefix": "get_context_data",
+    "description": "Django get_context_data for generic views",
+    "body": [
+      "def get_context_data(self, **kwargs):",
+      "    context = super(${ViewName}, self).get_context_data(**kwargs)",
+      "    return context"
+    ]
+  },
+  "__init__": {
+    "prefix": "__init__",
+    "description": "__init__() method",
+    "body": [
+      "__init__(self, *args, **kwargs):",
+      "$1"
+    ]
+  },
+  "traceback": {
+    "prefix": "Traceback",
+    "description": "Print Traceback",
+    "body": [
+      "import traceback; traceback.print_exc();"
+    ]
+  },
+  "pdb": {
+    "prefix": "pdb",
+    "description": "PDB breakpoint",
+    "body": [
+      "import pdb ; pdb.set_trace()"
+    ]
+  },
+  "ipdb": {
+    "prefix": "ipdb",
+    "description": "IPDB breakpoint",
+    "body": [
+      "import ipdb ; ipdb.set_trace()"
+    ]
+  },
+  "Django Model Class Setup": {
+    "prefix": "modclass",
+    "body": [
+      "class ${1:ClassName}(models.Model):",
+      "    ${0:Fields}"
+    ],
+    "description": "Model Class Setup"
+  },
+  "Django Model CharField": {
+    "prefix": "charfield",
+    "body": [
+      "${1:fieldName} = models.CharField(max_length = ${2:150})",
+      "${0}"
+    ],
+    "description": "CharField Model"
+  },
+  "Django Model IntField": {
+    "prefix": "intfield",
+    "body": [
+      "${1:fieldName} = models.IntegerField()",
+      "${0}"
+    ],
+    "description": "IntegerField Model"
+  },
+  "Django Model BoolField": {
+    "prefix": "boolfield",
+    "body": [
+      "${1:fieldName} = models.BooleanField()",
+      "${0}"
+    ],
+    "description": "BooleanField Model"
+  },
+  "Django Date Field": {
+    "prefix": "datefield",
+    "body": [
+      "${1:fieldName} = models.DateField(auto_now=${2:False}, auto_now_add=${3:False})",
+      "${0}"
+    ],
+    "description": "DateField Model"
+  },
+  "Django DateTime Field": {
+    "prefix": ["dtfield", "datetimefield"],
+    "body": [
+      "${1:fieldName} = models.DateTimeField(auto_now=${2:False}, auto_now_add=${3:False})",
+      "${0}"
+    ],
+    "description": "DateTimeField Model"
+  },
+  "Django Decimal Field": {
+    "prefix": "decimalfield",
+    "body": [
+      "${1:fieldName} = models.DecimalField(max_digits=${2:None}, decimal_places=${3:None})",
+      "${0}"
+    ],
+    "description": "DecimalField Model"
+  },
+  "Django Email Field": {
+    "prefix": "emailfield",
+    "body": [
+      "${1:fieldName} = models.EmailField(max_length=%{2:254})",
+      "${0}"
+    ],
+    "description": "EmailField Model"
+  },
+  "Django File Field": {
+    "prefix": "filefield",
+    "body": [
+      "${1:fieldName} = models.FileField(upload_to=${2:None}, max_length = ${3:100})",
+      "${0}"
+    ],
+    "description": "FileField Model"
+  },
+  "Django Image Field": {
+    "prefix": "imagefield",
+    "body": [
+      "${1:fieldName} = models.ImageField(upload_to=${2:None}, height_field=${3:None}, width_field=${4:None}, max_length=${5:100})",
+      "${0}"
+    ],
+    "description": "ImageField Model"
+  },
+  "Django Float Field": {
+    "prefix": "floatfield",
+    "body": [
+      "${1:fieldName} = models.FloatField()",
+      "${0}"
+    ],
+    "description": "FloatField Model"
+  },
+  "Django Slug Field": {
+    "prefix": "slugfield",
+    "body": [
+      "${1:fieldName} = models.SlugField(max_length = ${2:50})",
+      "${0}"
+    ],
+    "description": "SlugField Model"
+  },
+  "Django Text Field": {
+    "prefix": "textfield",
+    "body": [
+      "${1:fieldName} = models.TextField()",
+      "${0}"
+    ],
+    "description": "TextField Model"
+  },
+  "Django Time Field": {
+    "prefix": "timefield",
+    "body": [
+      "${1:fieldName} = models.TimeField(auto_now=${2:False}, auto_now_add=${3:False})",
+      "${0}"
+    ],
+    "description": "TimeField Model"
+  },
+  "Django URL Field": {
+    "prefix": "urlfield",
+    "body": [
+      "${1:fieldName} = models.URLField(max_length = ${2:200})",
+      "${0}"
+    ],
+    "description": "URLField Model"
+  },
+  "Django ForeignKey Field": {
+    "prefix": ["foreignkeyfield", "fkfield"],
+    "body": [
+      "${1:fieldName} = models.ForeignKey(${2:RelatedModel}, on_delete=${3:models.CASCADE})",
+      "${0}"
+    ],
+    "description": "ForeignKeyField Model"
+  },
+  "Django ManyToMany Field": {
+    "prefix": ["manytomanyfield", "m2mfield", "mtmfield"],
+    "body": [
+      "${1:fieldName} = models.ManyToManyField(${2:RelatedModel})",
+      "${0}"
+    ],
+    "description": "ManyToManyField Model"
+  },
+  "Django OneToOneField": {
+    "prefix": ["onetoonefield", "otofield"],
+    "body": [
+      "${1:fieldName} = models.OneToOneField(${2:RelatedModel}, on_delete=${3:models.CASCADE})",
+      "${0}"
+    ],
+    "description": "OneToOneField Model"
+  },
+  "Admin Site Register": {
+    "prefix": "admreg",
+    "body": [
+      "admin.site.register(${1:ModelName})",
+      "${0}"
+    ],
+    "description": "Admin Site Regitser"
+  },
+  "URL Pattern": {
+    "prefix": ["paturl", "urlpattern", "upt"],
+    "body": [
+      "from django.urls import path, re_path",
+      "from .views import ${1:ViewsToBeImported}",
+      "",
+      "app_name = ${2:AppName}",
+      "",
+      "urlpatterns = [",
+      "    ${0}",
+      "]"
+    ],
+    "description": "urls.py file setup"
+  },
+  "Django Manager Class": {
+    "prefix": ["dmanagerclass", "dmnc", "managerclass"],
+    "body": [
+      "from django.db.models import Manager",
+      "",
+      "class ${1:ManagerName}(Manager):",
+      "    ${0}"
+    ],
+    "description": "Custom Manager Class Setup"
+  },
+  "Django Custom Manager Model": {
+    "prefix": ["cmmodel", "custommanagermodel"],
+    "body": [
+      "${1:objects} = ${2:CustomManagerName}()",
+      "${0}"
+    ],
+    "description": "Custom Manager In Model"
+  },
+  "Form File Setup": {
+    "prefix": ["setform", "formpy"],
+    "body": [
+      "from django import forms",
+      "${0}"
+    ],
+    "description": "Form.py setup"
+  },
+  "Form class Setup": {
+    "prefix": ["formclass", "fclass"],
+    "body": [
+      "class ${1:FormName}(forms.Form):",
+      "    ${0:Fields}"
+    ],
+    "description": "Form Class Setup"
+  },
+  "Override is_valid()": {
+    "prefix": ["is_valid()", "validcustom"],
+    "body": [
+      "def is_valid(self):",
+      "    valid = super().is_valid()",
+      "    if not valid:",
+      "        return False",
+      "    ${1:# Custom Logic}",
+      "    return True",
+      "${0}"
+    ],
+    "description": "Override is_valid() method"
+  },
+  "Setup ModelForm": {
+    "prefix": ["modform", "modelform"],
+    "body": [
+      "class ${1:FormName}(forms.ModelForm):",
+      "    class Meta:",
+      "        model = ${2:ModelName}",
+      "        fields = [${0:Model Fields}]"
+    ],
+    "description": "ModelForm Setup"
+  },
+  "Django Form BoolField": {
+    "prefix": "fboolfield",
+    "body": [
+      "${1:fieldName} = forms.BooleanField(${2})",
+      "${0}"
+    ],
+    "description": "BoolField Form"
+  },
+  "Django Form CharField": {
+    "prefix": "fcharfield",
+    "body": [
+      "${1:fieldName} = forms.CharField(${2})",
+      "${0}"
+    ],
+    "description": "CharField Form"
+  },
+  "Django Form ChoiceField": {
+    "prefix": "fchoicefield",
+    "body": [
+      "${1:fieldName} = forms.ChoiceField(${2})",
+      "${0}"
+    ],
+    "description": "ChoiceField Form"
+  },
+  "Django Form DateField": {
+    "prefix": "fdatefield",
+    "body": [
+      "${1:fieldName} = forms.DateField(${2})",
+      "${0}"
+    ],
+    "description": "DateField Form"
+  },
+  "Django Form DateTimeField": {
+    "prefix": ["fdatetimefield", "fdtfield"],
+    "body": [
+      "${1:fieldName} = forms.DateTimeField(${2})",
+      "${0}"
+    ],
+    "description": "DateTimeField Form"
+  },
+  "Django Form DecimalField": {
+    "prefix": "fdecimalfield",
+    "body": [
+      "${1:fieldName} = forms.DecimalField(${2})",
+      "${0}"
+    ],
+    "description": "DecimalField Form"
+  },
+  "Django Form EmailField": {
+    "prefix": "femailfield",
+    "body": [
+      "${1:fieldName} = forms.EmailField(${2})",
+      "${0}"
+    ],
+    "description": "EmailField Form"
+  },
+  "Django Form FileField": {
+    "prefix": "ffilefield",
+    "body": [
+      "${1:fieldName} = forms.FileField(${2})",
+      "${0}"
+    ],
+    "description": "FileField Form"
+  },
+  "Django Form FloatField": {
+    "prefix": "ffloatfield",
+    "body": [
+      "${1:fieldName} = forms.FloatField(${2})",
+      "${0}"
+    ],
+    "description": "FloatField Form"
+  },
+  "Django Form ImageField": {
+    "prefix": "fimagefield",
+    "body": [
+      "${1:fieldName} = forms.ImageField(${2})",
+      "${0}"
+    ],
+    "description": "ImageField Form"
+  },
+  "Django Form IntegerField": {
+    "prefix": ["fintegerfield", "fintfield"],
+    "body": [
+      "${1:fieldName} = forms.IntegerField(${2})",
+      "${0}"
+    ],
+    "description": "IntegerField Form"
+  },
+  "Django Form MultipleChoiceField": {
+    "prefix": ["fmultiplechoicefiled", "fmcfield"],
+    "body": [
+      "${1:fieldName} = forms.MultipleChoiceField(${2})",
+      "${0}"
+    ],
+    "description": "MultipleChoiceField Form"
+  },
+  "Django Form SlugField": {
+    "prefix": "fslugfield",
+    "body": [
+      "${1:fieldName} = forms.SlugField(${2})",
+      "${0}"
+    ],
+    "description": "SlugField Form"
+  },
+  "Django Form Timefield": {
+    "prefix": "ftimefield",
+    "body": [
+      "${1:fieldName} = forms.TimeField(${2})",
+      "${0}"
+    ],
+    "description": "TimeField Form"
+  },
+  "Django Form URLField": {
+    "prefix": "furlfield",
+    "body": [
+      "${1:fieldName} = forms.URLField(${2})",
+      "${0}"
+    ],
+    "description": "URLField Form"
+  },
+  "Django Base View": {
+    "prefix": ["gencbv", "basecbv"],
+    "body": [
+      "class ${1:ViewName}(View):",
+      "",
+      "    def post(self, request):",
+      "        ${2:pass}",
+      "",
+      "    def get(self,request):",
+      "        ${0:pass}"
+    ],
+    "description": "Django Base View"
+  },
+  "Render Shortcut": {
+    "prefix": ["render", "rshort"],
+    "body": [
+      "return render(request, ${1:template_name}, {${2}})",
+      "${0}"
+    ],
+    "description": "Render shortcut"
+  },
+  "Redirect Shortcut": {
+    "prefix": ["httpresponseredirect", "httpred", "htrd"],
+    "body": [
+      "return HttpResponseRedirect(reverse('${1:App_Name}:${2:Name}', ${3}))",
+      "${0}"
+    ],
+    "description": "HttpResponseRedirect Shortcut"
+  },
+  "Cleaned Data Access": {
+    "prefix": ["cleaneddata", "formdata", "cltd"],
+    "body": [
+      "${1:VariableName} = ${2:formName}.cleaned_data.get('${3:${1}}')",
+      "${0}"
+    ],
+    "description": "Form data access"
+  },
+  "Custom Filter": {
+    "prefix": ["customfilter", "custfilt"],
+    "body": [
+      "from django import template",
+      "",
+      "register = template.Library()",
+      "",
+      "@register.filter(name=${1:FilterName})",
+      "def ${2:${1}}(value, arg=None):",
+      "    ${0}"
+    ],
+    "description": "Custom Filter"
+  },
+  "Create API": {
+    "prefix": "create",
+    "body": [
+      "${1:Variable} = ${2:ModelName}.objects.create(${3:PassArguments})",
+      "${0}"
+    ],
+    "description": "Create API"
+  },
+  "All API": {
+    "prefix": "all",
+    "body": [
+      "${1:Variable} = ${2:ModelName}.objects.all()",
+      "${0}"
+    ],
+    "description": "All API"
+  },
+  "Filter API": {
+    "prefix": "filter",
+    "body": [
+      "${1:Variable} = ${2:ModelName}.objects.filter(${3:PassArguments})",
+      "${0}"
+    ],
+    "description": "Filter API"
+  },
+  "Get API": {
+    "prefix": "get",
+    "body": [
+      "${1:Variable} = ${2:ModelName}.objects.get(${3:PassArguments})",
+      "${0}"
+    ],
+    "description": "Get API"
+  },
+  "Exclude API": {
+    "prefix": "exclude",
+    "body": [
+      "${1:Variable} = ${2:ModelName}.objects.exclude(${3:PassArguments})",
+      "${0}"
+    ],
+    "description": "Exclude API"
+  },
+  "Get_Or_Create API": {
+    "prefix": ["get_or_create", "goc"],
+    "body": [
+      "${1:Variable}, ${2:Created} = ${3:ModelName}.objects.get_or_create(${4:PassArguments})",
+      "${0}"
+    ],
+    "description": "Get Or Create API"
+  },
+  "Update_Or_Create API": {
+    "prefix": ["update_or_create", "uoc"],
+    "body": [
+      "${1:Variable}, ${2:Created} = ${3:ModelName}.objects.update_or_create(${4:PassArguments})",
+      "${0}"
+    ],
+    "description": "Update Or Create API"
+  },
+  "Count API": {
+    "prefix": "count",
+    "body": [
+      "${1:Variable} = ${2:ModelName}.objects.count(${3:PassArguments})",
+      "${0}"
+    ],
+    "description": "Count API"
+  },
+  "Latest API": {
+    "prefix": "latest",
+    "body": [
+      "${1:Variable} = ${2:ModelName}.objects.latest(${3:PassArguments})",
+      "${0}"
+    ],
+    "description": "Latest API"
+  },
+  "Earliest API": {
+    "prefix": "earliest",
+    "body": [
+      "${1:Variable} = ${2:ModelName}.objects.earliest(${3:PassArguments})",
+      "${0}"
+    ],
+    "description": "Earliest API"
+  },
+  "Function View Generic": {
+    "prefix": ["fbvbase", "genfunc"],
+    "body": [
+      "def ${1:FunctionName}(request):",
+      "",
+      "    if request.method == 'POST':",
+      "        ${2:pass}",
+      "",
+      "    if request.method == 'GET':",
+      "        ${3:pass}",
+      "",
+      "${0}"
+    ],
+    "desription": "Function Based Generic View"
+  },
+  "Create User": {
+    "prefix": ["usercreate", "createuser"],
+    "body": [
+      "user = Users.objects.create_user(username=${1:username}, password=${2:password}${3})",
+      "${0}"
+    ],
+    "description": ["Create new user instance"]
+  },
+  "Validate Password": {
+    "prefix": "validatepassword",
+    "body": [
+      "validate_password(${1:password}, user=${2:None})",
+      "${0}"
+    ],
+    "description": "Validate Password"
+  },
+  "Set Password": {
+    "prefix": "setpassword",
+    "body": [
+      "${1:user}.set_password(${2:password})",
+      "${0}"
+    ],
+    "description": "Set Password"
+  },
+  "Authenticate User": {
+    "prefix": ["authuser", "authenticateuser"],
+    "body": [
+      "${1:user} = authenticate(username=${2:username}, password=${3:password})",
+      "if ${1}:",
+      "    ${0:# User is authenticated}"
+    ],
+    "description": "Authenticate User"
+  },
+  "Check Authentication": {
+    "prefix": "checkauth",
+    "body": [
+      "if ${1:user}.is_authenticated():",
+      "    ${0:# User is authenticated}"
+    ],
+    "description": "Check Authentication"
   }
 }

@@ -1,9 +1,9 @@
 # Snippety
 
-<p align="center">
-<img
-src="icon.png"
-     alt="Markdown Monster icon" /></p>
+[![Version](https://vsmarketplacebadge.apphb.com/version/JaprozSinghSaini.snippety.svg)](https://vsmarketplacebadge.apphb.com/version-short/JaprozSinghSaini.snippety.svg)
+[![Install](https://vsmarketplacebadge.apphb.com/installs/JaprozSinghSaini.snippety.svg)](https://vsmarketplacebadge.apphb.com/installs-short/JaprozSinghSaini.snippety.svg)
+[![Downloads](https://vsmarketplacebadge.apphb.com/downloads/JaprozSinghSaini.snippety.svg)](https://vsmarketplacebadge.apphb.com/downloads-short/JaprozSinghSaini.snippety.svg)
+[![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/JaprozSinghSaini.snippety.svg)](https://vsmarketplacebadge.apphb.com/rating-short/JaprozSinghSaini.snippety.svg)<br>
 This extension provides you with Snippets for all web programming frameworks such as React, Redux, Vue, Angular, Flask, Django and much more https://visualstudio.com
 
 ## Languages
