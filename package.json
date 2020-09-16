@@ -1,8 +1,8 @@
 {
     "name": "snippety",
     "displayName": "Snippety",
-    "description": "Snippets for all your web programming needs(HTML, CSS, React, Redux, ES6, ES7, GraphQL, NodeJS, Vanilla JavaScript)!!",
-    "version": "1.0.0",
+    "description": "Snippets for all your web programming needs (HTML, CSS, React, Redux,Vue, VueX, lodash, Next, classnames ES6, ES7, GraphQL, NodeJS)!!",
+    "version": "1.1.0",
     "publisher": "JaprozSinghSaini",
     "author": {
         "name": "Japroz Singh Saini",
@@ -15,7 +15,7 @@
         "url": "https://github.com/Japroz-Saini/Snippety"
     },
     "bugs": {
-        "url": "https://githb.com/Japroz-Saini/Snippety/issues"
+        "url": "https://github.com/Japroz-Saini/Snippety/issues"
     },
     "icon": "icon.png",
     "keywords": [
@@ -29,10 +29,14 @@
         "All in One",
         "Flask",
         "Django",
-        "Web Snippets"
+        "Web Snippets",
+        "Next",
+        "Lodash",
+        "Python2",
+        "Python3"
     ],
     "engines": {
-        "vscode": "^1.0.0"
+        "vscode": "^1.1.0"
     },
     "categories": [
         "Snippets"
@@ -52,6 +56,10 @@
             },
             {
                 "language": "python",
+                "path": "./snippets/snippets.code-snippets"
+            },
+            {
+                "language": "markdown",
                 "path": "./snippets/snippets.code-snippets"
             }
         ]
