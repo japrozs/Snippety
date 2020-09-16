@@ -1,7 +1,7 @@
 Snippety
 ========
 
-This extension provides you JavaScript and React/Redux snippets in ES7 with Babel plugin features for [VS Code](https://code.visualstudio.com/)
+This extension provides you with Snippets for all web programming frameworks such as React, Redux, Vue, Angular, Flask, Django and much more[VS Code](https://code.visualstudio.com/)
 
 Languages
 ---------
