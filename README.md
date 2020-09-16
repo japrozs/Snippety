@@ -48,7 +48,7 @@ Clone the Material Theme repository as `dsznajder.es7-react-js-snippets`:
 git clone https://github.com/Japroz-Saini/Snippety
 ```
 
-Here is direct link to marketplace [ES7 React/Redux/React-Native/JS Snippets](https://marketplace.visualstudio.com/items?itemName=JaprozSinghSaini.snippety)
+Here is direct link to marketplace [Snippety](https://marketplace.visualstudio.com/items?itemName=JaprozSinghSaini.snippety)
 
 ## Supported languages (file extensions)
 
@@ -60,7 +60,7 @@ Here is direct link to marketplace [ES7 React/Redux/React-Native/JS Snippets](h
 - Angular (.ts)
 - HTML (.html)
 - Python (.py)
-- Vue(.vue)
+- Vue (.vue)
 
 ## Commands
 
