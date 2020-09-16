@@ -30,9 +30,8 @@ Launch *Quick Open*:
 
 Paste the following command and press `Enter`:
 
-```
+```bash
 ext install japrozsaini.snippety
-
 ```
 
 ### GitHub Repository Clone
@@ -45,9 +44,8 @@ Change to your `.vscode/extensions` [VS Code extensions directory](https://cod
 
 Clone the Material Theme repository as `dsznajder.es7-react-js-snippets`:
 
-```
+```bash
 git clone https://github.com/Japroz-Saini/Snippety
-
 ```
 
 Here is direct link to marketplace [ES7 React/Redux/React-Native/JS Snippets](https://marketplace.visualstudio.com/items?itemName=JaprozSinghSaini.snippety)
