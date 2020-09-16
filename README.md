@@ -60,6 +60,7 @@ Here is direct link to marketplace [ES7 React/Redux/React-Native/JS Snippets](h
 - Angular (.ts)
 - HTML (.html)
 - Python (.py)
+- Vue(.vue)
 
 ## Commands
 
