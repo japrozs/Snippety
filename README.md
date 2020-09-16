@@ -1,5 +1,10 @@
 # Snippety
 
+<p align="center">
+<img 
+    align="center"
+src="icon.png"
+     alt="Markdown Monster icon" /><p>
 This extension provides you with Snippets for all web programming frameworks such as React, Redux, Vue, Angular, Flask, Django and much more[VS Code](https://code.visualstudio.com/)
 
 ## Languages
