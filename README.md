@@ -46,7 +46,7 @@ Change to your `.vscode/extensions` [VS Code extensions directory](https://cod
 - _macOS_: `~/.vscode/extensions`
 - _Windows_: `%USERPROFILE%\.vscode\extensions`
 
-Clone the Material Theme repository as `dsznajder.es7-react-js-snippets`:
+Clone the Snippety repository as `japroz-saini.snippety`:
 
 ```bash
 git clone https://github.com/Japroz-Saini/Snippety
