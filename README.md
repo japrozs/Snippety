@@ -6,6 +6,10 @@
 [![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/JaprozSinghSaini.snippety.svg)](https://vsmarketplacebadge.apphb.com/rating-short/JaprozSinghSaini.snippety.svg)<br>
 This extension provides you with Snippets for all web programming frameworks such as React, Redux, Vue, Angular, Flask, Django and much more https://visualstudio.com
 
+## What's new
+
+Support has been added for Ruby on Rails and also for the new and upcoming `ml5js` library which is a machine learning library for the browser.You can visit it at [ml5js.org](https://ml5js.org)
+
 ## Languages
 
 Snippety provides support for the following languages:
@@ -20,9 +24,12 @@ Snippety provides support for the following languages:
   - Lodash
   - GraphQL
   - Express
+  - Ml5JS
 - Python
   - Flask
   - Django
+- Ruby
+  - Rails
 
 ### Visual Studio Marketplace
 
@@ -45,8 +52,6 @@ Change to your `.vscode/extensions` [VS Code extensions directory](https://cod
 - _Linux_: `~/.vscode/extensions`
 - _macOS_: `~/.vscode/extensions`
 - _Windows_: `%USERPROFILE%\.vscode\extensions`
-
-Clone the Material Theme repository as `dsznajder.es7-react-js-snippets`:
 
 ```bash
 git clone https://github.com/Japroz-Saini/Snippety
@@ -186,6 +191,14 @@ print('Robots have finished their work. So lets destroy them.')
 droid1.die()
 droid2.die()
 Robot.how_many()
+```
+
+## Ruby on Rails
+
+Type commands starting with rails to see all the various snippets for Ruby on Rails
+
+```ruby
+Array.new(${1:len}) { |${2:i}| $0 }
 ```
 
 ## Extension Details

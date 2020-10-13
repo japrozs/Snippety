@@ -10089,10 +10089,7 @@
   },
   "__str__": {
     "prefix": "str",
-    "body": [
-      "def __str__(self):",
-      "\treturn self${1: # TODO}"
-    ],
+    "body": ["def __str__(self):", "\treturn self${1: # TODO}"],
     "description": "",
     "scope": "source.python"
   },
@@ -10441,10 +10438,7 @@
   },
   "queryset": {
     "prefix": "qs",
-    "body": [
-      "class $1QuerySet(models.QuerySet):",
-      "\tpass"
-    ],
+    "body": ["class $1QuerySet(models.QuerySet):", "\tpass"],
     "description": "",
     "scope": "source.python"
   },
@@ -10776,10 +10770,7 @@
   },
   "ilib": {
     "prefix": "ilib",
-    "body": [
-      "from django import template",
-      "register = template.Library()"
-    ],
+    "body": ["from django import template", "register = template.Library()"],
     "description": "",
     "scope": "source.python"
   },
@@ -10814,11 +10805,7 @@
   },
   "register_filter": {
     "prefix": "register_filter",
-    "body": [
-      "@register.filter",
-      "def $1(value):",
-      "\treturn value$2"
-    ],
+    "body": ["@register.filter", "def $1(value):", "\treturn value$2"],
     "description": "",
     "scope": "source.python"
   },
@@ -11008,9 +10995,7 @@
   "Blank and Null Field Properties": {
     "prefix": "blank and null Djngo Field",
     "desciption": "Django Blank and Null model field properties snippet",
-    "body": [
-      "blank=True, null=True"
-    ]
+    "body": ["blank=True, null=True"]
   },
   "CharField": {
     "prefix": "CharField",
@@ -11078,38 +11063,26 @@
   "__init__": {
     "prefix": "__init__",
     "description": "__init__() method",
-    "body": [
-      "__init__(self, *args, **kwargs):",
-      "$1"
-    ]
+    "body": ["__init__(self, *args, **kwargs):", "$1"]
   },
   "traceback": {
     "prefix": "Traceback",
     "description": "Print Traceback",
-    "body": [
-      "import traceback; traceback.print_exc();"
-    ]
+    "body": ["import traceback; traceback.print_exc();"]
   },
   "pdb": {
     "prefix": "pdb",
     "description": "PDB breakpoint",
-    "body": [
-      "import pdb ; pdb.set_trace()"
-    ]
+    "body": ["import pdb ; pdb.set_trace()"]
   },
   "ipdb": {
     "prefix": "ipdb",
     "description": "IPDB breakpoint",
-    "body": [
-      "import ipdb ; ipdb.set_trace()"
-    ]
+    "body": ["import ipdb ; ipdb.set_trace()"]
   },
   "Django Model Class Setup": {
     "prefix": "modclass",
-    "body": [
-      "class ${1:ClassName}(models.Model):",
-      "    ${0:Fields}"
-    ],
+    "body": ["class ${1:ClassName}(models.Model):", "    ${0:Fields}"],
     "description": "Model Class Setup"
   },
   "Django Model CharField": {
@@ -11122,18 +11095,12 @@
   },
   "Django Model IntField": {
     "prefix": "intfield",
-    "body": [
-      "${1:fieldName} = models.IntegerField()",
-      "${0}"
-    ],
+    "body": ["${1:fieldName} = models.IntegerField()", "${0}"],
     "description": "IntegerField Model"
   },
   "Django Model BoolField": {
     "prefix": "boolfield",
-    "body": [
-      "${1:fieldName} = models.BooleanField()",
-      "${0}"
-    ],
+    "body": ["${1:fieldName} = models.BooleanField()", "${0}"],
     "description": "BooleanField Model"
   },
   "Django Date Field": {
@@ -11162,10 +11129,7 @@
   },
   "Django Email Field": {
     "prefix": "emailfield",
-    "body": [
-      "${1:fieldName} = models.EmailField(max_length=%{2:254})",
-      "${0}"
-    ],
+    "body": ["${1:fieldName} = models.EmailField(max_length=%{2:254})", "${0}"],
     "description": "EmailField Model"
   },
   "Django File Field": {
@@ -11186,26 +11150,17 @@
   },
   "Django Float Field": {
     "prefix": "floatfield",
-    "body": [
-      "${1:fieldName} = models.FloatField()",
-      "${0}"
-    ],
+    "body": ["${1:fieldName} = models.FloatField()", "${0}"],
     "description": "FloatField Model"
   },
   "Django Slug Field": {
     "prefix": "slugfield",
-    "body": [
-      "${1:fieldName} = models.SlugField(max_length = ${2:50})",
-      "${0}"
-    ],
+    "body": ["${1:fieldName} = models.SlugField(max_length = ${2:50})", "${0}"],
     "description": "SlugField Model"
   },
   "Django Text Field": {
     "prefix": "textfield",
-    "body": [
-      "${1:fieldName} = models.TextField()",
-      "${0}"
-    ],
+    "body": ["${1:fieldName} = models.TextField()", "${0}"],
     "description": "TextField Model"
   },
   "Django Time Field": {
@@ -11218,10 +11173,7 @@
   },
   "Django URL Field": {
     "prefix": "urlfield",
-    "body": [
-      "${1:fieldName} = models.URLField(max_length = ${2:200})",
-      "${0}"
-    ],
+    "body": ["${1:fieldName} = models.URLField(max_length = ${2:200})", "${0}"],
     "description": "URLField Model"
   },
   "Django ForeignKey Field": {
@@ -11250,10 +11202,7 @@
   },
   "Admin Site Register": {
     "prefix": "admreg",
-    "body": [
-      "admin.site.register(${1:ModelName})",
-      "${0}"
-    ],
+    "body": ["admin.site.register(${1:ModelName})", "${0}"],
     "description": "Admin Site Regitser"
   },
   "URL Pattern": {
@@ -11282,26 +11231,17 @@
   },
   "Django Custom Manager Model": {
     "prefix": ["cmmodel", "custommanagermodel"],
-    "body": [
-      "${1:objects} = ${2:CustomManagerName}()",
-      "${0}"
-    ],
+    "body": ["${1:objects} = ${2:CustomManagerName}()", "${0}"],
     "description": "Custom Manager In Model"
   },
   "Form File Setup": {
     "prefix": ["setform", "formpy"],
-    "body": [
-      "from django import forms",
-      "${0}"
-    ],
+    "body": ["from django import forms", "${0}"],
     "description": "Form.py setup"
   },
   "Form class Setup": {
     "prefix": ["formclass", "fclass"],
-    "body": [
-      "class ${1:FormName}(forms.Form):",
-      "    ${0:Fields}"
-    ],
+    "body": ["class ${1:FormName}(forms.Form):", "    ${0:Fields}"],
     "description": "Form Class Setup"
   },
   "Override is_valid()": {
@@ -11329,122 +11269,77 @@
   },
   "Django Form BoolField": {
     "prefix": "fboolfield",
-    "body": [
-      "${1:fieldName} = forms.BooleanField(${2})",
-      "${0}"
-    ],
+    "body": ["${1:fieldName} = forms.BooleanField(${2})", "${0}"],
     "description": "BoolField Form"
   },
   "Django Form CharField": {
     "prefix": "fcharfield",
-    "body": [
-      "${1:fieldName} = forms.CharField(${2})",
-      "${0}"
-    ],
+    "body": ["${1:fieldName} = forms.CharField(${2})", "${0}"],
     "description": "CharField Form"
   },
   "Django Form ChoiceField": {
     "prefix": "fchoicefield",
-    "body": [
-      "${1:fieldName} = forms.ChoiceField(${2})",
-      "${0}"
-    ],
+    "body": ["${1:fieldName} = forms.ChoiceField(${2})", "${0}"],
     "description": "ChoiceField Form"
   },
   "Django Form DateField": {
     "prefix": "fdatefield",
-    "body": [
-      "${1:fieldName} = forms.DateField(${2})",
-      "${0}"
-    ],
+    "body": ["${1:fieldName} = forms.DateField(${2})", "${0}"],
     "description": "DateField Form"
   },
   "Django Form DateTimeField": {
     "prefix": ["fdatetimefield", "fdtfield"],
-    "body": [
-      "${1:fieldName} = forms.DateTimeField(${2})",
-      "${0}"
-    ],
+    "body": ["${1:fieldName} = forms.DateTimeField(${2})", "${0}"],
     "description": "DateTimeField Form"
   },
   "Django Form DecimalField": {
     "prefix": "fdecimalfield",
-    "body": [
-      "${1:fieldName} = forms.DecimalField(${2})",
-      "${0}"
-    ],
+    "body": ["${1:fieldName} = forms.DecimalField(${2})", "${0}"],
     "description": "DecimalField Form"
   },
   "Django Form EmailField": {
     "prefix": "femailfield",
-    "body": [
-      "${1:fieldName} = forms.EmailField(${2})",
-      "${0}"
-    ],
+    "body": ["${1:fieldName} = forms.EmailField(${2})", "${0}"],
     "description": "EmailField Form"
   },
   "Django Form FileField": {
     "prefix": "ffilefield",
-    "body": [
-      "${1:fieldName} = forms.FileField(${2})",
-      "${0}"
-    ],
+    "body": ["${1:fieldName} = forms.FileField(${2})", "${0}"],
     "description": "FileField Form"
   },
   "Django Form FloatField": {
     "prefix": "ffloatfield",
-    "body": [
-      "${1:fieldName} = forms.FloatField(${2})",
-      "${0}"
-    ],
+    "body": ["${1:fieldName} = forms.FloatField(${2})", "${0}"],
     "description": "FloatField Form"
   },
   "Django Form ImageField": {
     "prefix": "fimagefield",
-    "body": [
-      "${1:fieldName} = forms.ImageField(${2})",
-      "${0}"
-    ],
+    "body": ["${1:fieldName} = forms.ImageField(${2})", "${0}"],
     "description": "ImageField Form"
   },
   "Django Form IntegerField": {
     "prefix": ["fintegerfield", "fintfield"],
-    "body": [
-      "${1:fieldName} = forms.IntegerField(${2})",
-      "${0}"
-    ],
+    "body": ["${1:fieldName} = forms.IntegerField(${2})", "${0}"],
     "description": "IntegerField Form"
   },
   "Django Form MultipleChoiceField": {
     "prefix": ["fmultiplechoicefiled", "fmcfield"],
-    "body": [
-      "${1:fieldName} = forms.MultipleChoiceField(${2})",
-      "${0}"
-    ],
+    "body": ["${1:fieldName} = forms.MultipleChoiceField(${2})", "${0}"],
     "description": "MultipleChoiceField Form"
   },
   "Django Form SlugField": {
     "prefix": "fslugfield",
-    "body": [
-      "${1:fieldName} = forms.SlugField(${2})",
-      "${0}"
-    ],
+    "body": ["${1:fieldName} = forms.SlugField(${2})", "${0}"],
     "description": "SlugField Form"
   },
   "Django Form Timefield": {
     "prefix": "ftimefield",
-    "body": [
-      "${1:fieldName} = forms.TimeField(${2})",
-      "${0}"
-    ],
+    "body": ["${1:fieldName} = forms.TimeField(${2})", "${0}"],
     "description": "TimeField Form"
   },
   "Django Form URLField": {
     "prefix": "furlfield",
-    "body": [
-      "${1:fieldName} = forms.URLField(${2})",
-      "${0}"
-    ],
+    "body": ["${1:fieldName} = forms.URLField(${2})", "${0}"],
     "description": "URLField Form"
   },
   "Django Base View": {
@@ -11462,10 +11357,7 @@
   },
   "Render Shortcut": {
     "prefix": ["render", "rshort"],
-    "body": [
-      "return render(request, ${1:template_name}, {${2}})",
-      "${0}"
-    ],
+    "body": ["return render(request, ${1:template_name}, {${2}})", "${0}"],
     "description": "Render shortcut"
   },
   "Redirect Shortcut": {
@@ -11507,10 +11399,7 @@
   },
   "All API": {
     "prefix": "all",
-    "body": [
-      "${1:Variable} = ${2:ModelName}.objects.all()",
-      "${0}"
-    ],
+    "body": ["${1:Variable} = ${2:ModelName}.objects.all()", "${0}"],
     "description": "All API"
   },
   "Filter API": {
@@ -11602,18 +11491,12 @@
   },
   "Validate Password": {
     "prefix": "validatepassword",
-    "body": [
-      "validate_password(${1:password}, user=${2:None})",
-      "${0}"
-    ],
+    "body": ["validate_password(${1:password}, user=${2:None})", "${0}"],
     "description": "Validate Password"
   },
   "Set Password": {
     "prefix": "setpassword",
-    "body": [
-      "${1:user}.set_password(${2:password})",
-      "${0}"
-    ],
+    "body": ["${1:user}.set_password(${2:password})", "${0}"],
     "description": "Set Password"
   },
   "Authenticate User": {
@@ -11632,5 +11515,1182 @@
       "    ${0:# User is authenticated}"
     ],
     "description": "Check Authentication"
+  },
+  "ml5js Starter HTML Template": {
+    "prefix": "ml5html",
+    "body": [
+      "<html>",
+      "\t<head>",
+      "\t\t<meta charset='UTF-8'>",
+      "\t\t<title>Image classification using MobileNet and p5.js</title>",
+
+      "\t\t<script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js'></script>",
+      "\t\t<script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js'></script>",
+      "\t\t<script src='https://unpkg.com/ml5@0.3.1/dist/ml5.min.js'></script>",
+      "\t</head>",
+
+      "\t<body>",
+      "\t\t<h1>Image classification using MobileNet and p5.js</h1>",
+      "\t\t<script src='sketch.js'></script>",
+      "\t</body>",
+
+      "</html>"
+    ],
+    "description": "Generates a ml5js starter template with p5js"
+  },
+  "#": {
+    "prefix": "#",
+    "body": "# => ",
+    "description": "Add ‘# =>’ Marker",
+    "scope": "source.ruby"
+  },
+  ":": {
+    "prefix": ":",
+    "body": ":${1:key} => ${2:\"${3:value}\"}${4:, }",
+    "description": "Hash Pair — :key => \"value\"",
+    "scope": "source.ruby"
+  },
+  "Comp": {
+    "prefix": "Comp",
+    "body": "include Comparable\n\ndef <=>(other)\n\t$0\nend",
+    "description": "include Comparable ..",
+    "scope": "source.ruby"
+  },
+  "Dir": {
+    "prefix": "Dir",
+    "body": "Dir[${1:\"${2:glob/**/*.rb}\"}]",
+    "description": "Dir[\"..\"]",
+    "scope": "source.ruby"
+  },
+  "Dirg": {
+    "prefix": "Dirg",
+    "body": "Dir.glob(${1:\"${2:dir/glob/*}\"}) { |${3:file}| $0 }",
+    "description": "Dir.glob(\"..\") { |file| .. }",
+    "scope": "source.ruby"
+  },
+  "Enum": {
+    "prefix": "Enum",
+    "body": "include Enumerable\n\ndef each(&block)\n\t$0\nend",
+    "description": "include Enumerable ..",
+    "scope": "source.ruby"
+  },
+  "File": {
+    "prefix": "File",
+    "body": "File.read(${1:\"${2:path/to/file}\"})",
+    "description": "File.read(\"..\")",
+    "scope": "source.ruby"
+  },
+  "Filef": {
+    "prefix": "Filef",
+    "body": "File.foreach(${1:\"${2:path/to/file}\"}) { |${3:line}| $0 }",
+    "description": "File.foreach (\"..\") { |line| .. }",
+    "scope": "source.ruby"
+  },
+  "Forw": {
+    "prefix": "Forw",
+    "body": "extend Forwardable",
+    "description": "extend Forwardable",
+    "scope": "source.ruby"
+  },
+  "Hash": {
+    "prefix": "Hash",
+    "body": "Hash.new { |${1:hash}, ${2:key}| ${1:hash}[${2:key}] = $0 }",
+    "description": "Hash.new { |hash, key| hash[key] = .. }",
+    "scope": "source.ruby"
+  },
+  "Md": {
+    "prefix": "Md",
+    "body": "File.open(${1:\"${2:path/to/file}.dump\"}, \"wb\") { |${3:file}| Marshal.dump(${4:obj}, ${3:file}) }",
+    "description": "Marshal.dump(.., file)",
+    "scope": "source.ruby"
+  },
+  "Ml": {
+    "prefix": "Ml",
+    "body": "File.open(${1:\"${2:path/to/file}.dump\"}, \"rb\") { |${3:file}| Marshal.load(${3:file}) }",
+    "description": "Marshal.load(obj)",
+    "scope": "source.ruby"
+  },
+  "Pn-": {
+    "prefix": "Pn-",
+    "body": "PStore.new(${1:\"${2:file_name.pstore}\"})",
+    "description": "PStore.new( .. )",
+    "scope": "source.ruby"
+  },
+  "Yd-": {
+    "prefix": "Yd-",
+    "body": "File.open(${1:\"${2:path/to/file}.yaml\"}, \"w\") { |${3:file}| YAML.dump(${4:obj}, ${3:file}) }",
+    "description": "YAML.dump(.., file)",
+    "scope": "source.ruby"
+  },
+  "Yl-": {
+    "prefix": "Yl-",
+    "body": "File.open(${1:\"${2:path/to/file}.yaml\"}) { |${3:file}| YAML.load(${3:file}) }",
+    "description": "YAML.load(file)",
+    "scope": "source.ruby"
+  },
+  "all": {
+    "prefix": "all",
+    "body": "all? { |${1:e}| $0 }",
+    "description": "all? { |e| .. }",
+    "scope": "source.ruby"
+  },
+  "am": {
+    "prefix": "am",
+    "body": "alias_method :${1:new_name}, :${0:old_name}",
+    "description": "alias_method ..",
+    "scope": "source.ruby"
+  },
+  "any": {
+    "prefix": "any",
+    "body": "any? { |${1:e}| $0 }",
+    "description": "any? { |e| .. }",
+    "scope": "source.ruby"
+  },
+  "app": {
+    "prefix": "app",
+    "body": "if __FILE__ == \\$PROGRAM_NAME\n\t$0\nend",
+    "description": "application { .. }",
+    "scope": "source.ruby"
+  },
+  "arr": {
+    "prefix": "arr",
+    "body": "Array.new(${1:len,val})\n$0",
+    "description": "Arry.new(...)",
+    "scope": "source.ruby"
+  },
+  "arri": {
+    "prefix": "arri",
+    "body": "Array.new(${1:len}) { |${2:i}| $0 }",
+    "description": "Array.new( .. ) { |index| .. }",
+    "scope": "source.ruby"
+  },
+
+  "asnr": {
+    "prefix": "asnr",
+    "body": "assert_nothing_raised(${1:Exception}) { $0 }",
+    "description": "assert_nothing_raised(..) { .. }",
+    "scope": "source.ruby"
+  },
+  "asnt": {
+    "prefix": "asnt",
+    "body": "assert_nothing_thrown { $0 }",
+    "description": "assert_nothing_thrown { .. }",
+    "scope": "source.ruby"
+  },
+  "asr": {
+    "prefix": "asr",
+    "body": "assert_raise(${1:Exception}) { $0 }",
+    "description": "assert_raise(..) { .. }",
+    "scope": "source.ruby"
+  },
+  "ast": {
+    "prefix": "ast",
+    "body": "assert_throws(:${1:expected}) { $0 }",
+    "description": "assert_throws(..) { .. }",
+    "scope": "source.ruby"
+  },
+  "beg": {
+    "prefix": "beg",
+    "body": "begin\n\t$1\nrescue ${2:ExceptionName}\n\t$3\nend",
+    "description": "begin … rescue … end",
+    "scope": "source.ruby"
+  },
+  "bm-": {
+    "prefix": "bm-",
+    "body": "TESTS = ${1:10_000}\nBenchmark.bmbm do |results|\n  $0\nend",
+    "description": "Benchmark.bmbm do .. end",
+    "scope": "source.ruby"
+  },
+  "case": {
+    "prefix": "case",
+    "body": "case ${1:object}\nwhen ${2:condition}\n\t$0\nend",
+    "description": "case … end",
+    "scope": "source.ruby"
+  },
+  "cl": {
+    "prefix": "cl",
+    "body": "classify { |${1:e}| $0 }",
+    "description": "classify { |e| .. }",
+    "scope": "source.ruby"
+  },
+  "cla": {
+    "prefix": "cla",
+    "body": "class ${1:ClassName}\n\t$0\nend",
+    "description": "class .. end",
+    "scope": "source.ruby"
+  },
+  "clase": {
+    "prefix": "clase",
+    "body": "class << ${1:self}\n\t$0\nend",
+    "description": "class << self .. end",
+    "scope": "source.ruby"
+  },
+  "clafn": {
+    "prefix": "clafn",
+    "body": "split(\"::\").inject(Object) { |par, const| par.const_get(const) }",
+    "description": "class_from_name()",
+    "scope": "source.ruby"
+  },
+  "clast": {
+    "prefix": "clast",
+    "body": "$1 = Struct.new(:${2:attr_names}) do\n\tdef ${3:method_name}\n\t\t$0\n\tend\n\t\n\t\nend",
+    "description": "ClassName = Struct .. do .. end",
+    "scope": "source.ruby"
+  },
+  "col": {
+    "prefix": "col",
+    "body": "collect { |${1:e}| $0 }",
+    "description": "collect { |e| .. }",
+    "scope": "source.ruby"
+  },
+  "deec": {
+    "prefix": "deec",
+    "body": "Marshal.load(Marshal.dump(${0:obj_to_copy}))",
+    "description": "deep_copy(..)",
+    "scope": "source.ruby"
+  },
+  "def": {
+    "prefix": "def",
+    "body": "def ${1:method_name}\n\t$0\nend",
+    "description": "def … end",
+    "scope": "source.ruby"
+  },
+  "defd": {
+    "prefix": "defd",
+    "body": "def_delegator :${1:@del_obj}, :${2:del_meth}, :${3:new_name}",
+    "description": "def_delegator ..",
+    "scope": "source.ruby"
+  },
+  "defds": {
+    "prefix": "defds",
+    "body": "def_delegators :${1:@del_obj}, :${0:del_methods}",
+    "description": "def_delegators ..",
+    "scope": "source.ruby"
+  },
+  "defi": {
+    "prefix": "defi",
+    "body": "def initialize${1:(${2:argument})}\n\t@${2:argument} = ${2:argument}$0\nend",
+    "description": "def initialize .. end",
+    "scope": "source.ruby"
+  },
+  "defmm": {
+    "prefix": "defmm",
+    "body": "def method_missing(meth, *args, &blk)\n\t$0\nend",
+    "description": "def method_missing .. end",
+    "scope": "source.ruby"
+  },
+  "defs": {
+    "prefix": "defs",
+    "body": "def self.${1:class_method_name}\n\t$0\nend",
+    "description": "def self .. end",
+    "scope": "source.ruby"
+  },
+  "deft": {
+    "prefix": "deft",
+    "body": "def test_${1:case_name}\n\t$0\nend",
+    "description": "def test_ .. end",
+    "scope": "source.ruby"
+  },
+  "deli": {
+    "prefix": "deli",
+    "body": "delete_if { |${1:e}| $0 }",
+    "description": "delete_if { |e| .. }",
+    "scope": "source.ruby"
+  },
+  "det": {
+    "prefix": "det",
+    "body": "detect { |${1:e}| $0 }",
+    "description": "detect { |e| .. }",
+    "scope": "source.ruby"
+  },
+  "dir": {
+    "prefix": "dir",
+    "body": "File.dirname(__FILE__)",
+    "description": "directory()",
+    "scope": "source.ruby"
+  },
+  "do": {
+    "prefix": "do",
+    "body": "do\n\t$0\nend",
+    "description": "Insert do … end",
+    "scope": "source.ruby"
+  },
+  "dop": {
+    "prefix": "dop",
+    "body": "do |${1:variable}|\n\t$0\nend",
+    "description": "Insert do |variable| … end",
+    "scope": "source.ruby"
+  },
+  "ea": {
+    "prefix": "ea",
+    "body": "each { |${1:e}| $0 }",
+    "description": "each { |e| .. }",
+    "scope": "source.ruby"
+  },
+  "eab": {
+    "prefix": "eab",
+    "body": "each_byte { |${1:byte}| $0 }",
+    "description": "each_byte { |byte| .. }",
+    "scope": "source.ruby"
+  },
+  "eacha": {
+    "prefix": "eac-",
+    "body": "each_char { |${1:chr}| $0 }",
+    "description": "each_char { |chr| .. }",
+    "scope": "source.ruby"
+  },
+  "eacon": {
+    "prefix": "eac-",
+    "body": "each_cons(${1:2}) { |${2:group}| $0 }",
+    "description": "each_cons(..) { |group| .. }",
+    "scope": "source.ruby"
+  },
+  "eai": {
+    "prefix": "eai",
+    "body": "each_index { |${1:i}| $0 }",
+    "description": "each_index { |i| .. }",
+    "scope": "source.ruby"
+  },
+  "eak": {
+    "prefix": "eak",
+    "body": "each_key { |${1:key}| $0 }",
+    "description": "each_key { |key| .. }",
+    "scope": "source.ruby"
+  },
+  "eal": {
+    "prefix": "eal",
+    "body": "each_line$1 { |${2:line}| $0 }",
+    "description": "each_line { |line| .. }",
+    "scope": "source.ruby"
+  },
+  "eap": {
+    "prefix": "eap",
+    "body": "each_pair { |${1:name}, ${2:val}| $0 }",
+    "description": "each_pair { |name, val| .. }",
+    "scope": "source.ruby"
+  },
+  "eas-": {
+    "prefix": "eas-",
+    "body": "each_slice(${1:2}) { |${2:group}| $0 }",
+    "description": "each_slice(..) { |group| .. }",
+    "scope": "source.ruby"
+  },
+  "eav": {
+    "prefix": "eav",
+    "body": "each_value { |${1:val}| $0 }",
+    "description": "each_value { |val| .. }",
+    "scope": "source.ruby"
+  },
+  "eawi": {
+    "prefix": "eawi",
+    "body": "each_with_index { |${1:e}, ${2:i}| $0 }",
+    "description": "each_with_index { |e, i| .. }",
+    "scope": "source.ruby"
+  },
+  "elsif": {
+    "prefix": "elsif",
+    "body": "elsif ${1:condition}\n\t$0",
+    "description": "elsif ...",
+    "scope": "source.ruby"
+  },
+  "_e": {
+    "prefix": "end",
+    "body": "__END__\n",
+    "description": "__END__",
+    "scope": "source.ruby"
+  },
+  "fin": {
+    "prefix": "fin",
+    "body": "find { |${1:e}| $0 }",
+    "description": "find { |e| .. }",
+    "scope": "source.ruby"
+  },
+  "fina": {
+    "prefix": "fina",
+    "body": "find_all { |${1:e}| $0 }",
+    "description": "find_all { |e| .. }",
+    "scope": "source.ruby"
+  },
+  "flao": {
+    "prefix": "flao",
+    "body": "inject(Array.new) { |${1:arr}, ${2:a}| ${1:arr}.push(*${2:a}) }",
+    "description": "flatten_once()",
+    "scope": "source.ruby"
+  },
+  "gre": {
+    "prefix": "gre",
+    "body": "grep(${1:/${2:pattern}/}) { |${3:match}| $0 }",
+    "description": "grep(/pattern/) { |match| .. }",
+    "scope": "source.ruby"
+  },
+  "i": {
+    "prefix": "i",
+    "body": "inspect",
+    "description": "#inspect",
+    "scope": "source.ruby"
+  },
+  "if": {
+    "prefix": "if",
+    "body": "if ${1:condition}\n\t$0\nend",
+    "description": "if … end",
+    "scope": "source.ruby"
+  },
+  "ife": {
+    "prefix": "ife",
+    "body": "if ${1:condition}\n\t$2\nelse\n\t$3\nend",
+    "description": "if … else … end",
+    "scope": "source.ruby"
+  },
+  "loo": {
+    "prefix": "loo",
+    "body": "loop { $0 }",
+    "description": "loop { .. }",
+    "scope": "source.ruby"
+  },
+  "map": {
+    "prefix": "map",
+    "body": "map { |${1:e}| $0 }",
+    "description": "map { |e| .. }",
+    "scope": "source.ruby"
+  },
+  "mapwi-": {
+    "prefix": "mapwi-",
+    "body": "enum_with_index.map { |${1:e}, ${2:i}| $0 }",
+    "description": "map_with_index { |e, i| .. }",
+    "scope": "source.ruby"
+  },
+  "max": {
+    "prefix": "max",
+    "body": "max { |a, b| $0 }",
+    "description": "max { |a, b| .. }",
+    "scope": "source.ruby"
+  },
+  "min": {
+    "prefix": "min",
+    "body": "min { |a, b| $0 }",
+    "description": "min { |a, b| .. }",
+    "scope": "source.ruby"
+  },
+  "mod": {
+    "prefix": "mod",
+    "body": "module ${1:ModuleName}\n\t$0\nend",
+    "description": "module .. end",
+    "scope": "source.ruby"
+  },
+  "modf": {
+    "prefix": "modf",
+    "body": "module $1\n\tmodule_function\n\t\n\t$0\nend",
+    "description": "module .. module_function .. end",
+    "scope": "source.ruby"
+  },
+  "nam": {
+    "prefix": "nam",
+    "body": "namespace :$1 do\n\t$0\nend",
+    "description": "namespace :.. do .. end",
+    "scope": "source.ruby"
+  },
+  "par": {
+    "prefix": "par",
+    "body": "partition { |${1:e}| $0 }",
+    "description": "partition { |e| .. }",
+    "scope": "source.ruby"
+  },
+  "patfh": {
+    "prefix": "patfh",
+    "body": "File.join(File.dirname(__FILE__), *%w[${1:rel path here}])",
+    "description": "path_from_here( .. )",
+    "scope": "source.ruby"
+  },
+  "r": {
+    "prefix": "r",
+    "body": "attr_reader :${0:attr_names}",
+    "description": "attr_reader ..",
+    "scope": "source.ruby"
+  },
+  "ran": {
+    "prefix": "ran",
+    "body": "sort_by { rand }",
+    "description": "randomize()",
+    "scope": "source.ruby"
+  },
+  "rb": {
+    "prefix": "rb",
+    "body": "#!/usr/bin/env ruby -wKU\n",
+    "description": "#!/usr/bin/env ruby -wKU",
+    "scope": "source.ruby, L:dyn.caret.begin.document"
+  },
+  "rej": {
+    "prefix": "rej",
+    "body": "reject { |${1:e}| $0 }",
+    "description": "reject { |e| .. }",
+    "scope": "source.ruby"
+  },
+  "rep": {
+    "prefix": "rep",
+    "body": "results.report(\"${1:name}:\") { TESTS.times { $0 } }",
+    "description": "results.report(..) { .. }",
+    "scope": "source.ruby"
+  },
+  "req": {
+    "prefix": "req",
+    "body": "require '$0'",
+    "description": "require '..'",
+    "scope": "source.ruby"
+  },
+  "reqg-": {
+    "prefix": "reqg-",
+    "body": "require \"$0\"",
+    "description": "require_gem \"..\"",
+    "scope": "source.ruby"
+  },
+  "reve": {
+    "prefix": "reve",
+    "body": "reverse_each { |${1:e}| $0 }",
+    "description": "reverse_each { |e| .. }",
+    "scope": "source.ruby"
+  },
+  "rw": {
+    "prefix": "rw",
+    "body": "attr_accessor :${0:attr_names}",
+    "description": "attr_accessor ..",
+    "scope": "source.ruby"
+  },
+  "sca": {
+    "prefix": "sca",
+    "body": "scan(/${1:pattern}/) { |${2:match}| $0 }",
+    "description": "scan(/../) { |match| .. }",
+    "scope": "source.ruby"
+  },
+  "sel": {
+    "prefix": "sel",
+    "body": "select { |${1:e}| $0 }",
+    "description": "select { |e| .. }",
+    "scope": "source.ruby"
+  },
+  "sinc": {
+    "prefix": "sinc",
+    "body": "class << self; self end",
+    "description": "singleton_class()",
+    "scope": "source.ruby"
+  },
+  "sor": {
+    "prefix": "sor",
+    "body": "sort { |a, b| $0 }",
+    "description": "sort { |a, b| .. }",
+    "scope": "source.ruby"
+  },
+  "sorb": {
+    "prefix": "sorb",
+    "body": "sort_by { |${1:e}| $0 }",
+    "description": "sort_by { |e| .. }",
+    "scope": "source.ruby"
+  },
+  "tas": {
+    "prefix": "tas",
+    "body": "desc \"${1:Task description}\"\ntask :${2:${3:task_name} => ${4:[:${5:dependent, :tasks}]}} do\n\t$0\nend",
+    "description": "task :task_name => [:dependent, :tasks] do .. end",
+    "scope": "source.ruby"
+  },
+  "ts": {
+    "prefix": "ts",
+    "body": "require \"test/unit\"\n\nrequire \"tc_${1:test_case_file}\"\nrequire \"tc_${2:test_case_file}\"\n",
+    "description": "require \"tc_..\" ..",
+    "scope": "source.ruby"
+  },
+  "unif": {
+    "prefix": "unif",
+    "body": "ARGF.each_line$1 do |${2:line}|\n\t$0\nend",
+    "description": "unix_filter { .. }",
+    "scope": "source.ruby"
+  },
+  "unless": {
+    "prefix": "unless",
+    "body": "unless ${1:condition}\n\t$0\nend",
+    "description": "unless … end",
+    "scope": "source.ruby"
+  },
+  "until": {
+    "prefix": "until",
+    "body": "until ${1:condition}\n\t$0\nend",
+    "description": "until ... end",
+    "scope": "source.ruby"
+  },
+  "usai": {
+    "prefix": "usai",
+    "body": "if ARGV.$1\n\tabort \"Usage:  #{\\$PROGRAM_NAME} ${2:ARGS_GO_HERE}\"\nend",
+    "description": "usage_if()",
+    "scope": "source.ruby"
+  },
+  "usau": {
+    "prefix": "usau",
+    "body": "unless ARGV.$1\n\tabort \"Usage:  #{\\$PROGRAM_NAME} ${2:ARGS_GO_HERE}\"\nend",
+    "description": "usage_unless()",
+    "scope": "source.ruby"
+  },
+  "utf8": {
+    "prefix": "utf8",
+    "body": "# encoding: ${1:UTF-8}\n",
+    "description": "# encoding: UTF-8",
+    "scope": "source.ruby"
+  },
+  "w": {
+    "prefix": "w",
+    "body": "attr_writer :${0:attr_names}",
+    "description": "attr_writer ..",
+    "scope": "source.ruby"
+  },
+  "when": {
+    "prefix": "when",
+    "body": "when ${1:condition}\n\t$0",
+    "description": "when …",
+    "scope": "source.ruby"
+  },
+  "while": {
+    "prefix": "while",
+    "body": "while ${1:condition}\n\t$0\nend",
+    "description": "while ... end",
+    "scope": "source.ruby"
+  },
+  "xml-": {
+    "prefix": "xml-",
+    "body": "REXML::Document.new(File.read(${1:\"${2:path/to/file}\"}))",
+    "description": "xmlread(..)",
+    "scope": "source.ruby"
+  },
+  "xpa": {
+    "prefix": "xpa",
+    "body": "elements.each(${1:\"${2://XPath}\"}) do |${3:node}|\n\t$0\nend",
+    "description": "xpath(..) { .. }",
+    "scope": "source.ruby"
+  },
+  "y": {
+    "prefix": "y",
+    "body": " :yields: ${0:arguments}",
+    "description": ":yields:",
+    "scope": "source.ruby comment"
+  },
+  "zip": {
+    "prefix": "zip",
+    "body": "zip(${1:enums}) { |${2:row}| $0 }",
+    "description": "zip(enums) { |row| .. }",
+    "scope": "source.ruby"
+  },
+  "ml5 CDN": {
+    "prefix": "ml5cdn",
+    "body": [
+      "<script src='https://unpkg.com/ml5@0.4.3/dist/ml5.min.js'></script>"
+    ],
+    "description": "Generates a CDN snippets for Ml5JS"
+  },
+  "Ml5JS Standard Template": {
+    "prefix": "ml5html",
+    "body": [
+      "<!DOCTYPE html>",
+      "<html lang=\"en\">",
+      "  <head>",
+      "    <title>Getting Started with ml5.js</title>",
+      "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+      "    <!-- p5 -->",
+      "    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js\"></script>",
+      "    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js\"></script>",
+      "    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js\"></script>",
+      "    <!-- ml5 -->",
+      "    <script src=\"https://unpkg.com/ml5@0.4.3/dist/ml5.min.js\"></script>",
+      "  </head>",
+      "",
+      "  <body>",
+      "    <script>",
+      "      // Your code will go here",
+      "      // open up your console - if everything loaded properly you should see 0.9.0",
+      "      console.log('ml5 version:', ml5.version);",
+      "",
+      "      function setup() {",
+      "        createCanvas(400, 400);",
+      "      }",
+      "",
+      "      function draw() {",
+      "        background(200);",
+      "      }",
+      "    </script>",
+      "  </body>",
+      "</html>",
+      ""
+    ],
+    "description": "Ml5JS Standard Template"
+  },
+  "Ml5JS Image Demo": {
+    "prefix": "ml5imgdemo",
+    "body": [
+      "// Initialize the Image Classifier method with MobileNet. A callback needs to be passed.",
+      "let classifier;",
+      "",
+      "// A variable to hold the image we want to classify",
+      "let img;",
+      "",
+      "function preload() {",
+      "  classifier = ml5.imageClassifier('MobileNet');",
+      "  img = loadImage('images/bird.png');",
+      "}",
+      "",
+      "function setup() {",
+      "  createCanvas(400, 400);",
+      "  classifier.classify(img, gotResult);",
+      "  image(img, 0, 0);",
+      "}",
+      "",
+      "// A function to run when we get any errors and the results",
+      "function gotResult(error, results) {",
+      "  // Display error in the console",
+      "  if (error) {",
+      "    console.error(error);",
+      "  } else {",
+      "    // The results are in an array ordered by confidence.",
+      "    console.log(results);",
+      "    createDiv(`Label: ${results[0].label}`);",
+      "    createDiv(`Confidence: ${nf(results[0].confidence, 0, 2)}`);",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "Ml5JS Image Demo"
+  },
+  "Ml5JS Preload": {
+    "prefix": "ml5preload",
+    "body": [
+      "function preload() {",
+      "  classifier = ml5.imageClassifier('MobileNet');",
+      "  img = loadImage('images/bird.png');",
+      "}",
+      ""
+    ],
+    "description": "Ml5JS Preload"
+  },
+  "Ml5JS GotResult Function": {
+    "prefix": "ml5result",
+    "body": [
+      "// A function to run when we get any errors and the results",
+      "function gotResult(error, results) {",
+      "  // Display error in the console",
+      "  if (error) {",
+      "    console.error(error);",
+      "  } else {",
+      "    // The results are in an array ordered by confidence.",
+      "    console.log(results);",
+      "    createDiv(`Label: ${results[0].label}`);",
+      "    createDiv(`Confidence: ${nf(results[0].confidence, 0, 2)}`);",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "Ml5JS GotResult Function"
+  },
+  "Ml5JS Image Classifier": {
+    "prefix": "ml5image",
+    "body": [
+      "// Pass a callback function to constructor",
+      "const classifier = ml5.imageClassifier('MobileNet', (err, model) => {",
+      "  console.log('Model Loaded!');",
+      "});",
+      "",
+      "// Make a prediction with the selected image and pass a callback function with two arguments",
+      "classifier.predict(image, (err, results) => {",
+      "  // Check for errors. If no errors, then do something with the results",
+      "});",
+      ""
+    ],
+    "description": "Ml5JS Image Classifier"
+  },
+  "Ml5JS Image Classifier CallBack": {
+    "prefix": "ml5imagecallback",
+    "body": [
+      "// Pass a callback function to constructor",
+      "const classifier = ml5.imageClassifier('MobileNet', (err, model) => {",
+      "  console.log('Model Loaded!');",
+      "});",
+      "",
+      "// Make a prediction with the selected image and pass a callback function with two arguments",
+      "classifier.predict(image, (err, results) => {",
+      "  // Check for errors. If no errors, then do something with the results",
+      "});",
+      ""
+    ],
+    "description": "Ml5JS Image Classifier CallBack"
+  },
+  "Ml5JS Data Template": {
+    "prefix": "ml5data",
+    "body": [
+      "// Step 1: load data or create some data ",
+      "const data = [",
+      "  {r:255, g:0, b:0, color:'red-ish'},",
+      "  {r:254, g:0, b:0, color:'red-ish'},",
+      "  {r:253, g:0, b:0, color:'red-ish'},",
+      "  {r:0, g:0, b:255, color:'blue-ish'},",
+      "  {r:0, g:0, b:254, color:'blue-ish'},",
+      "  {r:0, g:0, b:253, color:'blue-ish'},",
+      "];",
+      "",
+      "// Step 2: set your neural network options",
+      "const options = {",
+      "  task: 'classification',",
+      "  debug: true",
+      "}",
+      "",
+      "// Step 3: initialize your neural network",
+      "const nn = ml5.neuralNetwork(options);",
+      "",
+      "// Step 4: add data to the neural network",
+      "data.forEach(item => {",
+      "  const inputs = {",
+      "    r: item.r, ",
+      "    g: item.g, ",
+      "    b: item.b",
+      "  };",
+      "  const output = {",
+      "    color: item.color",
+      "  };",
+      "",
+      "  nn.addData(inputs, output);",
+      "});",
+      "",
+      "// Step 5: normalize your data;",
+      "nn.normalizeData();",
+      "",
+      "// Step 6: train your neural network",
+      "const trainingOptions = {",
+      "  epochs: 32,",
+      "  batchSize: 12",
+      "}",
+      "nn.train(trainingOptions, finishedTraining);",
+      "",
+      "// Step 7: use the trained model",
+      "function finishedTraining(){",
+      "  classify();",
+      "}",
+      "",
+      "// Step 8: make a classification",
+      "function classify(){",
+      "  const input = {",
+      "    r: 255, ",
+      "    g: 0, ",
+      "    b: 0",
+      "  }",
+      "  nn.classify(input, handleResults);",
+      "}",
+      "",
+      "// Step 9: define a function to handle the results of your classification",
+      "function handleResults(error, result) {",
+      "    if(error){",
+      "      console.error(error);",
+      "      return;",
+      "    }",
+      "    console.log(result); // {label: 'red', confidence: 0.8};",
+      "}",
+      ""
+    ],
+    "description": "Ml5JS Data Template"
+  },
+  "Ml5JS BodyPix": {
+    "prefix": "ml5bodypix",
+    "body": [
+      "const bodypix = ml5.bodyPix(modelReady);",
+      "",
+      "function modelReady() {",
+      "  // segment the image given",
+      "  bodypix.segment(img, gotResults);",
+      "}",
+      "",
+      "function gotResults(error, result) {",
+      "  if (error) {",
+      "    console.log(error);",
+      "    return;",
+      "  }",
+      "  // log the result",
+      "  console.log(result.backgroundMask);",
+      "}",
+      ""
+    ],
+    "description": "Ml5JS BodyPix"
+  },
+  "Ml5JS UNET": {
+    "prefix": "ml5unet",
+    "body": [
+      "// load your model...",
+      "const uNet = ml5.uNet('face');",
+      "",
+      "// assuming you have an HTMLVideo feed...",
+      "uNet.segment(video, gotResult);",
+      "",
+      "function gotResult(error, result) {",
+      "  // if there's an error return it",
+      "  if (error) {",
+      "    console.error(error);",
+      "    return;",
+      "  }",
+      "  // log your result",
+      "  console.log(result);",
+      "}",
+      ""
+    ],
+    "description": "Ml5JS UNET"
+  },
+  "Ml5JS Face Api": {
+    "prefix": "ml5faceapi",
+    "body": [
+      "const detectionOptions = {",
+      "  withLandmarks: true,",
+      "  withDescriptors: false,",
+      "};",
+      "// Initialize the magicFeature",
+      "const faceapi = ml5.faceApi(detectionOptions, modelLoaded);",
+      "",
+      "// When the model is loaded",
+      "function modelLoaded() {",
+      "  console.log('Model Loaded!');",
+      "",
+      "  // Make some sparkles",
+      "  faceapi.detect(myImage, (err, results) => {",
+      "    console.log(results);",
+      "  });",
+      "}",
+      "",
+      ""
+    ],
+    "description": "Ml5JS Face Api"
+  },
+  "Ml5JS Style Transfer": {
+    "prefix": "ml5style",
+    "body": [
+      "// Create a new Style Transfer Instance",
+      "const style = ml5.styleTransfer('data/myModel/', modelLoaded);",
+      "",
+      "// When the model is loaded",
+      "function modelLoaded() {",
+      "  console.log('Model Loaded!');",
+      "}",
+      "// Grab a img element and generate a new image.",
+      "style.transfer(document.getElementById(\"img\"), function(error, result) {",
+      "  img.src = result.src;",
+      "});",
+      ""
+    ],
+    "description": "Ml5JS Style Transfer"
+  },
+  "Ml5JS Pix 2 Pix": {
+    "prefix": "ml5pix2pix",
+    "body": [
+      "// Create a pix2pix model using a pre trained network",
+      "const pix2pix = ml5.pix2pix('models/customModel.pict', modelLoaded);",
+      "",
+      "// When the model is loaded",
+      "function modelLoaded() {",
+      "  console.log('Model Loaded!');",
+      "}",
+      "",
+      "// Transfer using a canvas",
+      "pix2pix.transfer(canvas, (err, result) => {",
+      "  console.log(result);",
+      "});",
+      ""
+    ],
+    "description": "Ml5JS Pix 2 Pix"
+  },
+  "Ml5JS CVAE ": {
+    "prefix": "ml5cvae",
+    "body": [
+      "const cvae = ml5.CVAE('model/quick_draw/manifest.json', modelReady);",
+      "",
+      "function modelReady() {",
+      "  // generate an image of an airplane",
+      "  cvae.generate('airplane', gotImage);",
+      "}",
+      "",
+      "function gotImage(error, result) {",
+      "  if (error) {",
+      "    console.log(error);",
+      "    return;",
+      "  }",
+      "  // log the result",
+      "  console.log(result);",
+      "}",
+      ""
+    ],
+    "description": "Ml5JS CVAE "
+  },
+  "Ml5JS DCGAN ": {
+    "prefix": "ml5dcgan",
+    "body": [
+      "const dcgan = ml5.DCGAN('model/geo/manifest.json', modelReady);",
+      "",
+      "// When the model is loaded",
+      "function modelReady() {",
+      "  // Generate a new image",
+      "  dcgan.generate(gotImage);",
+      "}",
+      "",
+      "function gotImage(err, result) {",
+      "  if (err) {",
+      "    console.log(err);",
+      "    return;",
+      "  }",
+      "  // The generated image is in the result",
+      "  console.log(result);",
+      "}",
+      ""
+    ],
+    "description": "Ml5JS DCGAN "
+  },
+  "Ml5JS Sketch ": {
+    "prefix": "ml5sketch",
+    "body": [
+      "// Create a new SketchRNN Instance",
+      "const model = ml5.sketchRNN('cat', modelReady);",
+      "",
+      "// When the model is loaded",
+      "function modelReady() {",
+      "  console.log('SketchRNN Model Loaded!');",
+      "}",
+      "// Reset the model's current stat",
+      "model.reset();",
+      "// Generate a new stroke",
+      "model.generate(gotSketch);",
+      "",
+      "function gotSketch(err, result) {",
+      "  // Do something with the result",
+      "}",
+      ""
+    ],
+    "description": "Ml5JS Sketch "
+  },
+  "Ml5JS YOLO ": {
+    "prefix": "ml5yolo",
+    "body": [
+      "const yolo = ml5.YOLO();",
+      "// OR",
+      "const yolo = ml5.YOLO(video);",
+      "// OR",
+      "const yolo = ml5.YOLO(video, ?options, ?callback)",
+      "// OR",
+      "const yolo = ml5.YOLO(?options, ?callback)",
+      ""
+    ],
+    "description": "Ml5JS YOLO "
+  },
+  "Ml5JS Sound Classifier ": {
+    "prefix": "ml5soundclassifier",
+    "body": [
+      "// Options for the SpeechCommands18w model, the default probabilityThreshold is 0",
+      "const options = { probabilityThreshold: 0.7 };",
+      "const classifier = ml5.soundClassifier('SpeechCommands18w', options, modelReady);",
+      "",
+      "function modelReady() {",
+      "  // classify sound",
+      "  classifier.classify(gotResult);",
+      "}",
+      "",
+      "function gotResult(error, result) {",
+      "  if (error) {",
+      "    console.log(error);",
+      "    return;",
+      "  }",
+      "  // log the result",
+      "  console.log(result);",
+      "}",
+      ""
+    ],
+    "description": "Ml5JS Sound Classifier "
+  },
+  "Ml5JS Pitch Detection ": {
+    "prefix": "ml5pitchdetection",
+    "body": [
+      "const audioContext = new AudioContext();",
+      "// const MicStream = MicStream",
+      "const pitch = ml5.pitchDetection(",
+      "  './model/',",
+      "  audioContext,",
+      "  MicStream,",
+      "  modelLoaded,",
+      ");",
+      "",
+      "// When the model is loaded",
+      "function modelLoaded() {",
+      "  console.log('Model Loaded!');",
+      "}",
+      "",
+      "pitch.getPitch((err, frequency) => {",
+      "  console.log(frequency);",
+      "});",
+      ""
+    ],
+    "description": "Ml5JS Pitch Detection "
+  },
+  "Ml5JS Char RNN ": {
+    "prefix": "ml5charrnn",
+    "body": [
+      "const audioContext = new AudioContext();",
+      "// const MicStream = MicStream",
+      "const pitch = ml5.pitchDetection(",
+      "  './model/',",
+      "  audioContext,",
+      "  MicStream,",
+      "  modelLoaded,",
+      ");",
+      "",
+      "// When the model is loaded",
+      "function modelLoaded() {",
+      "  console.log('Model Loaded!');",
+      "}",
+      "",
+      "pitch.getPitch((err, frequency) => {",
+      "  console.log(frequency);",
+      "});",
+      ""
+    ],
+    "description": "Ml5JS Char RNN "
+  },
+  "Ml5JS Sentiment": {
+    "prefix": "ml5sentiment",
+    "body": [
+      "// Create a new Sentiment method",
+      "const sentiment = ml5.sentiment('movieReviews', modelReady);",
+      "",
+      "// When the model is loaded",
+      "function modelReady() {",
+      "  // model is ready",
+      "  console.log('Model Loaded!');",
+      "}",
+      "",
+      "// make the prediction",
+      "const prediction = sentiment.predict(text);",
+      "console.log(prediction);",
+      ""
+    ],
+    "description": "Ml5JS Sentiment"
+  },
+  "Ml5JS Word 2 Vector": {
+    "prefix": "ml5word2vector",
+    "body": [
+      "// Create a new word2vec method",
+      "const wordVectors = ml5.word2vec('data/wordvecs.json', modelLoaded);",
+      "",
+      "// When the model is loaded",
+      "function modelLoaded() {",
+      "  console.log('Model Loaded!');",
+      "}",
+      "",
+      "// Find the closest word to 'rainbow'",
+      "wordVectors.nearest('rainbow', (err, results) => {",
+      "  console.log(results);",
+      "});",
+      ""
+    ],
+    "description": "Ml5JS Word 2 Vector"
+  },
+  "Ml5JS Utils": {
+    "prefix": "ml5utils",
+    "body": [
+      "const flippedImage = ml5.flipImage(input);",
+      ""
+    ],
+    "description": "Ml5JS Utils"
   }
 }
